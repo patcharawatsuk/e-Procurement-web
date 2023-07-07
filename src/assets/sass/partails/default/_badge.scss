@@ -1,0 +1,79 @@
+.badge-wrap{
+    padding: 5px 0 0;
+}
+.badge {
+    @include border-radius(30px);
+    background-color: $color-sub;
+    height: 26px;
+    line-height: 26px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: $color-white;
+    font-size: 13px;
+    padding: 0 10px;
+    display: inline-block;
+    vertical-align: middle;
+    &.accepted {
+        background-color: $color-accept;
+    }
+    &.light-blue {
+        background-color: $color-light-blue;
+        color: $color-normal;
+        &:hover {
+            background-color: $color-info;
+            color: $color-white;
+            cursor: pointer;
+            a {
+                color: $color-white;
+            }
+        }  
+    }
+    &.light-gray {
+        background-color: #EDF1F4;
+        border: 1px solid $color-border;
+        color: $color-normal;
+    }
+    &.badge-link {
+        &:hover {
+            background-color: $color-info;
+            color: $color-white;
+            cursor: pointer;
+        }  
+    }
+    &.border-blue {
+        color: $color-link;
+        background-color: $color-white;
+        border: 1px solid $color-link;
+    }
+    &.border-red {
+        color: $color-fail;
+        background-color: $color-white;
+        border: 1px solid $color-fail;
+    }
+    &.border-yellow {
+        color: $color-warning;
+        background-color: $color-white;
+        border: 1px solid $color-warning;
+    }
+    .icon-cross{
+        font-size: 18px;
+        top: -1px;
+        position: relative;
+    }
+}
+
+.badge-border{
+    background-color: transparent;
+    border: 1px solid $color-info;
+    border-radius: 2px;
+    color: $color-info;
+    font-size: 10px;
+    height: 20px;
+    line-height: 18px;
+    padding: 0 5px;
+    width: auto;
+    &.off{   
+        border-color: $color-sub;
+        color: $color-sub;
+    }
+}

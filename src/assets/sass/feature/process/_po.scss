@@ -1,0 +1,387 @@
+.table-po-list {
+  thead {
+    .col-po-status {
+      width: 235px;
+      min-width: 235px;
+    }
+  }
+
+  tbody > tr {
+    cursor: pointer;
+
+    &:hover {
+      td {
+        &.col-action-dot {
+          .pr-action {
+            .box-dropdown-title {
+              border-color: $color-border;
+              background-color: $color-white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .box-org-name {
+    //max-width: 120px;
+  }
+
+  .box-supplier-name {
+    //max-width: 100px;
+  }
+
+  .box-req-name {
+    //max-width: 80px;
+  }
+
+  .col-detail {
+    td {
+      padding: 0;
+      margin: 0;
+    }
+    background: #E8ECF1 !important;
+
+    .in-col-detail {
+      width: calc(100% - 80px);
+      border-collapse: collapse;
+      margin: 25px 20px 30px 61px;
+
+      tr {
+        background: transparent;
+        border-top: 1px solid #DCDEE1;
+
+        th {
+          padding: 6px 10px;
+          line-height: 2.5em;
+          color: $color-normal;
+          border-bottom: 1px solid #DCDEE1;
+
+          .noti-green {
+            top: -2px;
+            right: -2px;
+          }
+        }
+
+        td {
+          padding: 6px 10px;
+          line-height: 2.5em;
+          color: $color-normal;
+          border-bottom: none !important;
+
+          &.col-action {
+            width: 4%;
+            max-width: 132px;
+            padding: 2px 10px;
+            white-space: nowrap;
+
+            a {
+              margin: 0 5px;
+              color: $color-normal;
+
+              i.noti-green {
+                top: -3px;
+                right: -5px;
+              }
+            }
+          }
+
+          &.col-item-name {
+            padding: 0 10px !important;
+          }
+
+          &.col-border-bottom {
+            border-bottom: 1px solid #DCDEE1 !important;
+          }
+        }
+
+        &.no-top-line {
+          border-top: none;
+        }
+      }
+    }
+  }
+}
+
+.col-action-dot {
+  padding: 0 !important;
+  position: relative;
+  max-width: 200px;
+}
+
+.po-text-status {
+  padding: 15px 65px 15px 10px;
+
+  &.awaiting {
+    color: #FFC247;
+  }
+
+  &.accepted {
+    color: $color-border-focus;
+  }
+
+  &.rejected {
+    color: #D72C22;
+  }
+
+  &.failed {
+    color: #FA7029;
+  }
+
+  &.cancelled {
+    color: $color-title;
+  }
+
+  &.completed {
+    color: #77D042;
+  }
+
+  &.color-normal {
+    color: $color-normal;
+  }
+
+  &.has-icon {
+    padding-right: 85px;
+  }
+
+  >i {
+    float: left;
+    margin-top: 4px;
+  }
+
+  >span {
+    overflow: hidden;
+    display: block;
+  }
+}
+
+.tooltip-info {
+  position: absolute;
+  top: 13px;
+  right: 60px;
+  color: $color-warning!important;
+  display: inline-block;
+}
+
+.row-optional-detail {
+  margin-top: -30px;
+  padding-bottom: 30px;
+
+  .form-control {
+    width: 220px;
+  }
+}
+
+.space-bottom-clear {
+  height: 75px;
+  clear: both;
+}
+@media (max-width: 767px) {
+  .table-po-list {
+    thead {
+      .col-po-status {
+        width: 180px;
+        min-width: 180px;
+      }
+    }
+  }
+  .po-text-status {
+    padding-right: 10px;
+  }
+}
+@media (max-width: 850px) {
+  .row-optional-detail {
+    &.box-row {
+      margin: 0;
+      >[class^='column-'] {
+        margin: 0;
+        width: 50%;
+        float: left;
+        &:last-child {
+          padding-left: 10px;
+          padding-right: 0;
+        }
+        &:first-child {
+          padding-right: 10px;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .po-text-status {
+    &.has-icon {
+      padding-right: 35px;
+    }
+  }
+  .tooltip-info {
+    right: 10px;
+  }
+}
+@media (max-width: 736px) {
+  .table-default-nocolor td.col-input.col-gr-input {
+    padding: 6px 5px;
+
+    .form-control.text-right {
+      min-width: 70px;
+      padding: 6px 10px 6px 5px;
+    }
+  }
+
+  .row-optional-detail {
+    &.last {
+      margin-bottom: 20px;
+    }
+    .column-5 {
+      width: 98.002%;
+      float: none;
+      margin: 0;
+
+      .form-control.form-inline {
+        width: 100%;
+      }
+    }
+  }
+  .po-text-status {
+    .icon-dot {
+      display: none;
+    }
+  }
+}
+@media (max-width: 639px) {
+  .table-po-list {
+    > thead {
+      tr th {
+        padding: 10px 5px;
+        font-size: 12px;
+        border-left: none;
+        border-right: none;
+      }
+
+      .col-po-status {
+        width: 120px;
+        min-width: 0;
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          padding: 10px 5px;
+          font-size: 12px;
+          border-left: none;
+          border-right: none;
+        }
+      }
+    }
+  }
+
+  .pull-right.box-top-dropdown.pr-top-status {
+    float: none !important;
+    margin: 0 10px;
+
+    .box-dropdown-list,
+    .box-dropdown-title {
+      width: 100%;
+    }
+
+    .box-dropdown-list {
+      position: absolute;
+    }
+  }
+
+  .col-po-status,
+  .po-text-status {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .po-text-status {
+    padding: 10px 5px;
+  }
+
+  .row-gr-note {
+    .column-70-per {
+      width: 98.002%;
+      float: none !important;
+    }
+  }
+}
+
+.po-dropdown {
+  .box-dropdown-title {
+    width: 215px;
+    padding: 0 30px 0 15px;
+  }
+
+  .box-dropdown-list {
+    width: 215px;
+  }
+}
+
+.tab-menu-back {
+  .po-header-tab-size {
+    font-size: 14px;
+  }
+
+  @media (max-width: 640px) {
+    .po-header-tab-size {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .row-optional-detail {
+    &.box-row {
+      width: 100%;
+      >[class^='column-'] {
+        margin: 0;
+        width: 100%;
+        padding: 0!important;
+      }
+    }
+  }
+}
+
+.po-supplier-reject-reason {
+  word-break: break-all;
+}
+
+
+
+.box-optional-detail{
+  display: flex;
+  > div:not(:last-child){
+      margin-right: 20px;
+  }
+  .label-control, 
+  .form-control {
+      width: 220px;
+  }
+}
+@media (max-width: 820px) {
+  .box-optional-detail{
+      >div{
+        width: 50%;
+      }
+      .label-control, 
+      .form-control {
+          display: block;
+          width: 100%;
+      }
+  }
+}
+@media (max-width: 414px) {
+  .box-optional-detail{
+      >div{
+        width: 100%;
+      }
+
+      > div:not(:last-child){
+          margin-right: 0;
+      }
+      flex-direction: column;
+  }
+}

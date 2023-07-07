@@ -1,0 +1,12 @@
+@media (max-width:1150px) {
+    // step 1
+    .qtn-create-by{
+        clear: both;
+        float: none;
+    }
+    .noac-form{
+        .box-date, .box-time{
+            float: none !important;
+        }
+    }
+}

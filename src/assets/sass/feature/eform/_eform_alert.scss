@@ -1,0 +1,27 @@
+.modal-alert-wrap{
+    width: 320px;
+    position: fixed;
+    right: 35px;
+    top: 84px;
+    z-index: 99;
+    max-height: 240px;
+    overflow: hidden;
+}
+
+.inner-alert{
+    width: 100%;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+    border-width: 1px;
+    border-style: solid;
+    margin-bottom: 10px;
+    &.success{
+        background-color: $color-background-success-alert;
+        border-color: $color-success;
+        color: $color-success;
+    }
+    .alert-action{
+        color: $color-link;
+    }
+}

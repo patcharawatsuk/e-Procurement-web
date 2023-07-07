@@ -1,0 +1,191 @@
+.eq-topbar {
+    .eq-top-search {
+        width: calc(100% - 503px);
+        float: left;
+
+        .box-dropdown {
+            width: 30%;
+            max-width: 200px;
+            min-width: 170px;
+            float: left;
+            .box-dropdown-title {
+                cursor: pointer;
+                overflow: hidden;
+                float: left;
+                width: 100%;
+                line-height: 38px;
+                background: #fff;
+                padding: 0 15px;
+                border: 1px solid #FFF;
+                border-right-color: #EDF1F4;
+                border-radius: 2px 0 0 2px;
+                position: relative;
+                span {
+                    font-size: $font-menu;
+                    float: left;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    float: left;
+                    max-width: calc(100% - 35px);
+                }
+                .icon-arrow-down-page {
+                    font-size: $font-pagetitle;
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    margin-top: -10px;
+                }
+            }
+            .form-dropdown-list {
+                top: 45px;
+                border: none;
+                box-shadow: 0 5px 20px 0 rgba(45, 54, 67, 0.10) !important;
+                border-radius: 0 0 3px 3px;
+                max-height: 400px;
+                overflow-y: auto;
+            }
+        }
+        .search-input-bar {
+            position: relative;
+            width: calc(100% - 240px);
+            float: left;
+        }
+        .form-control {
+            width: 100%;
+            border: 1px solid #fff;
+            border-radius: 0;
+            height: 40px;
+        }
+        .icon-fail {
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            position: absolute;
+        }
+        .btn-search {
+            height: 40px !important;
+            width: 40px !important;
+            border: none;
+            background: #64BF2D;
+            border-radius: 0 3px 3px 0;
+        }
+    }
+}
+
+.box-shipping {
+  margin-bottom: 50px
+}
+
+.box-shipping .bs-to {
+  float: left;
+  width: 50%
+}
+
+.box-shipping .bs-to:first-child {
+  margin-right: 40px;
+  width: calc(50% - 40px)
+}
+
+.box-shipping .bs-to .bt-head {
+  padding: 5px 0;
+  color: #3B444F;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #E5E7ED
+}
+
+.box-shipping .bs-to .bt-detail {
+  color: #3B444F
+}
+
+.box-shipping .bs-to .bt-detail .bd-name {
+  font-size: 18px;
+  margin-bottom: 10px
+}
+
+.box-shipping .bs-to .bt-detail .bd-address {
+  margin-bottom: 10px
+}
+
+.box-shipping .bs-to .bt-detail .bd-contact {
+  margin-bottom: 30px
+}
+
+.box-shipping .bs-to .bt-detail .bd-contact .bc-wrap .bc-title {
+  float: left;
+  width: 90px;
+  margin-right: 20px
+}
+
+.box-shipping .bs-to .bt-detail .bd-contact .bc-wrap .bc-detail {
+  width: calc(100% - 110px)
+}
+
+.box-shipping .bs-to .bt-pay {
+  color: #3B444F;
+  font-size: 14px
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .box-shipping .bs-to,.sup-mh .pull-left {
+      float: none;
+      width: 100%
+    }
+    .box-shipping {
+      margin-bottom: 50px
+    }
+
+    .box-shipping .bs-to:first-child {
+      margin-right: 0;
+      width: 100%
+    }
+
+    .box-shipping .bs-to .bt-head {
+      padding: 5px 0;
+      color: #3B444F;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #E5E7ED
+    }
+
+    .box-shipping .bs-to .bt-detail {
+      color: #3B444F
+    }
+
+    .box-shipping .bs-to .bt-detail .bd-name {
+      font-size: 18px;
+      margin-bottom: 10px
+    }
+
+    .box-shipping .bs-to .bt-detail .bd-address {
+      margin-bottom: 10px
+    }
+
+    .box-shipping .bs-to .bt-detail .bd-contact {
+      margin-bottom: 30px
+    }
+
+    .box-shipping .bs-to .bt-detail .bd-contact .bc-wrap .bc-title {
+      float: left;
+      width: 90px;
+      margin-right: 20px
+    }
+
+    .box-shipping .bs-to .bt-detail .bd-contact .bc-wrap .bc-detail {
+      width: 65%;
+      margin-left: 110px;
+      word-break: break-word
+    }
+
+    .box-shipping .bs-to .bt-pay {
+      color: #3B444F;
+      font-size: 14px
+    }
+}

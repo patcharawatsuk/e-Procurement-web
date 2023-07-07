@@ -1,0 +1,257 @@
+/* buttons */
+[class*=" btn-op-"],
+[class^="btn-op-"] {
+  @include border-radius(2px);
+  padding: 0 10px;
+  display: inline-block;
+  line-height: 34px;
+  height: 34px;
+  min-width: 100px;
+  white-space: nowrap;
+  outline: none;
+  cursor: pointer;
+  overflow: visible \9;
+  width: auto \9;
+
+  &::before {
+    text-shadow: none;
+  }
+
+  .icon-arrow-left-page {
+    margin-top: -3px;
+    font-size: 11px;
+  }
+
+  .icon-plus {
+    margin-top: -5px;
+    font-size: 20px;
+  }
+
+  .icon-bin {
+    margin-top: -3px;
+    font-size: 18px;
+  }
+
+  .icon-delete {
+    margin-top: -3px;
+    font-size: 20px;
+  }
+
+  .icon-attachment,
+  .icon-receive,
+  .icon-return {
+    margin: -3px 5px 0 0;
+  }
+
+  .icon-attachment {
+    [class*="noti-"] {
+      right: -2px;
+      top: -2px;
+    }
+  }
+
+  &:disabled,
+  &[disabled="disabled"],
+  &[disabled] {
+    color: $color-disable !important;
+    background-color: $color-bg-disable !important;
+    border:1px solid $color-border-disable !important;
+    cursor: not-allowed;
+  }
+}
+
+.btn-op-default,
+a.btn-op-default {
+  background-color: $color-white;
+  border:1px solid $color-border;
+  color: $color-normal;
+
+  &:active,
+  &:focus,
+  &:visited {
+    color: $color-normal;
+  }
+
+  &:hover {
+    background-color: $color-background;
+    border:1px solid $color-sub;
+  }
+
+  &.w-auto {
+    min-width: 50px;
+  }
+
+  &.green {
+    background-color: $color-success;
+    border:1px solid $color-success;
+    color: $color-white;
+
+    &:active {
+      background-color: $color-active;
+      border:1px solid $color-active;
+    }
+
+    &:focus,
+    &:hover {
+      background-color: $color-medium-green;
+      border:1px solid $color-medium-green;
+    }
+  }
+
+  &.red {
+    background-color: $color-red;
+    border:1px solid $color-red;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-red-hover;
+      border:1px solid $color-red-hover;
+    }
+  }
+
+  &.lightblue {
+    background-color: $color-link;
+    border:1px solid $color-link;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-accept;
+      border:1px solid $color-accept;
+    }
+  }
+
+  &.grey {
+    background-color: $color-grey;
+    border:1px solid $color-grey;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-title;
+      border:1px solid $color-title;
+    }
+  }
+
+  // for call-to-action
+  &.other-action {
+    background-color: $btn-other-action;
+    border: 1px solid $btn-primary;
+    color: $btn-primary;
+
+    &:hover {
+      background-color: $btn-primary;
+      border:1px solid $btn-primary;
+      color: $color-white;
+    }
+  }
+
+  &.w-max {
+    width: 100%;
+  }
+
+  .noti-green {
+    top: 4px;
+    left: 20px;
+
+    &.edit-pr {
+      left: 28px;
+    }
+  }
+}
+
+.btn-op-primary,
+a.btn-op-primary {
+  background-color: $btn-primary;
+  border: 1px solid $btn-primary;
+  color: $color-white;
+
+  &:active,
+  &:focus,
+  &:hover,
+  &:visited {
+    color: $color-white;
+  }
+
+  &:hover {
+    background-color: $btn-primary-hover;
+    border:1px solid $btn-primary-hover;
+  }
+
+  &.btn-search {
+    @include border-left-radius(0);
+    width: 36px !important;
+    min-width: 0 !important;
+    text-align: center;
+    padding: 0 7px;
+
+    .icon-search {
+      margin-top: -3px;
+    }
+  }
+}
+
+.btn-op-disabled,
+a.btn-op-disabled {
+  color: $color-disable !important;
+  background-color: $color-bg-disable !important;
+  border: 1px solid $color-border-disable !important;
+  cursor: not-allowed !important;
+
+  &.btn-file-upload > input {
+    display: none;
+  }
+}
+
+.btn-op-loading,
+a.btn-op-loading {
+  @include background(#fff, '../images/form/spin_grey.gif', no-repeat, 10px, center);
+  background-size: 16px 16px;
+  padding: 0 10px 0 30px !important;
+}
+
+.btn-file-upload,
+a.btn-file-upload {
+  vertical-align: top;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0 10px \9;
+
+  &.btn-be-disabled,
+  &.btn-op-disabled {
+    [class*=" icon-btn-"],
+    [class^="icon-btn-"] {
+      opacity: 0.3;
+    }
+
+    .icon-btn-excel-grey {
+      background-image: url("../images/buttons/excel_grey.png");
+      background-image: url("../images/buttons/1x/excel_grey.png") \9;
+    }
+  }
+
+  input.browse {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 28px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+}
+
+.btn-get-master{
+  background-color: $btn-template;
+  border-color: $btn-template;
+  color: $color-white;
+  &:hover,&:active,&:visited{
+    background-color: $btn-template-hover;
+    border-color: $btn-template-hover;
+  }
+  i{
+    position: relative;
+    top: -2px;
+  }
+}

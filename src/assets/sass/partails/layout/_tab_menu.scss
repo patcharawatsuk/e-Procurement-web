@@ -1,0 +1,133 @@
+.frontend-tab-menu {
+  margin: 30px 0;
+  border-bottom: 1px solid $color-border;
+
+  // @include background(#fff, '../images/frontend/dotgrey.png', repeat-x, 0, bottom);
+  height: 40px;
+
+  .list-tab-menu {
+    height: 40px;
+    min-width: 120px;
+    text-align: center;
+    font-size: 14px;
+    float: left;
+    line-height: 20px;
+    padding: 10px 20px;
+    color: $color-sub;
+    border-top: 1px solid $color-border;
+    border-right: 1px solid $color-border;
+    border-bottom: 1px solid $color-border;
+    background-color: #F4F5F8;
+
+    &:first-child {
+      border-left: 1px solid $color-border;
+    }
+
+    &.active {
+      // color: $theme-base;
+      color: $color-info;
+      background-color: $color-white;
+      border-bottom: 1px solid $color-white;
+      font-weight: bold;
+
+      &:hover {
+        color: $theme-base;
+      }
+    }
+
+    &:hover {
+      color: $theme-base;
+    }
+
+    .menu-noti {
+      height: 16px;
+      padding: 0 7px;
+      font-size: 11px;
+      min-width: 20px;
+      overflow: hidden;
+      font-weight: bold;
+      line-height: 16px;
+      border-radius: 8px;
+      vertical-align: top;
+      color: $color-white;
+      margin: 2px 0 0 10px;
+      //display: inline-block;
+      display: none;
+      background-color: $color-red;
+    }
+
+    .tab-noti {
+      display: inline-block;
+      margin: 2px 0 0 5px;
+      padding: 0 5px;
+      min-width: 18px;
+      height: 16px;
+      color: $color-white;
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 18px;
+      vertical-align: top;
+      border-radius: 9px;
+      background-color: $color-red;
+    }
+  }
+}
+@media (max-width: 639px) {
+  .frontend-tab-menu {
+    // background-image: none;
+    border-bottom: none;
+
+    margin: 20px 0 30px;
+    height: auto;
+    position: relative;
+    display: table;
+    width: 100%;
+
+    .list-tab-menu {
+      //padding: 10px 30px 10px 10px;
+      padding: 10px;
+      height: auto;
+      min-width: 0;
+      width: 33.33%;
+      line-height: 1.2em;
+      //text-align: left;
+      text-align: center;
+      white-space: normal;
+      position: relative;
+      display: table-cell;
+      float: none;
+      vertical-align: middle;
+      margin-bottom: -1px;
+      // &:first-child {
+      //   border-left: none;
+      // }
+
+      // &:nth-child(3) {
+      //   border-right: none;
+      // }
+
+      .menu-noti {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        margin: -8px 0 0;
+      }
+    }
+
+    .clearfix {
+      display: none;
+    }
+    &.only-one-tab{
+      // @include background(#fff, '../images/frontend/dotgrey.png', repeat-x, 0, bottom);
+      border-bottom: 1px solid $color-border;
+      display: block;
+      //height: 38px;
+      .list-tab-menu{
+        border-bottom: 1px solid #fff;
+        
+        display: inline-block;
+        width: auto;
+      }
+    }
+  }
+}

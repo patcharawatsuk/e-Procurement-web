@@ -1,0 +1,138 @@
+/* import bootstrap */
+@import "bootstrap-sprockets";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/scaffolding";
+@import "bootstrap/_forms";
+/* import theme */
+@import "feature/eform/theme/_blue";
+/* import variables */
+@import "feature/eform/modules/_colors";
+@import "feature/eform/modules/_fonts";
+@import "feature/eform/modules/_column";
+@import "modules/_mixins";
+/* import icons */
+@import "partails/other/_icons";
+@import "partails/other/_icomoon";
+/* import style */
+@import "feature/eform/partails/_buttons";
+@import "feature/eform/partails/_dropdown";
+@import "feature/eform/partails/_utilities";
+@import "feature/eform/partails/_search_table";
+@import "feature/eform/partails/_forms";
+@import "feature/eform/partails/_modal";
+@import "feature/eform/partails/_popup";
+
+/* style Supplier Directory */
+.modal-search{
+    margin-bottom: 20px;
+    .form-control{
+        width: 312px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: none;
+        float: left;
+    }
+    .btn-search{
+        float: left;
+    }
+}
+.box-list-supplier{
+    border: 1px solid $color-border;
+    position: relative;
+    padding-top: 37px;
+    margin-bottom: 20px;
+    .box-freeze {
+        overflow-y: auto;
+        max-height: 240px;
+    }
+    // set column width
+    .col-bu-id,.col-branch{
+        width: 20%;
+    }
+    .col-sup-name{
+        width: 30%;
+    }
+    .col-bu-type{
+        width: 30%;
+    }
+}
+.freeze-header{
+    width: 100%;
+    font-size: $font-normal;
+    border-collapse: collapse;
+    thead {}
+    tbody{
+        color: $color-normal;
+        tr {
+            &:nth-child(even) {
+              background: $color-background;
+            }
+        
+            &:nth-child(odd) {
+              background: $color-white;
+            }
+            &:first-child{
+                td{
+                    border-top: none;
+                }
+            }
+            &:last-child{
+                td{
+                    border-bottom: none;
+                }
+            }
+        }
+        td{
+            color: $color-normal;
+        }
+    }
+    th{
+        height: 0;
+        line-height: 0;
+        padding: 0;
+        color: transparent;
+        border: none;
+        white-space: nowrap;
+        .thead-title{
+            position: absolute;
+            background: $color-white;
+            padding: 10px;
+            top: 0;
+            margin-left: 0;
+            line-height: normal;
+            border-bottom: 1px solid $color-border;
+            font-weight: bold;
+            color: $color-title;
+        }
+        + th{
+            .thead-title{
+                border-left: 1px solid $color-border;
+            }
+        }
+    }
+    th,td{
+        text-align: left;
+        vertical-align: top;
+    }
+    td{
+        border-top: 1px solid $color-border;
+        border-bottom: 1px solid $color-border;
+        padding: 10px;
+        + td{
+            border-left: 1px solid $color-border;
+        }
+    }
+    .bu-type{
+        width: calc(100% - 60px);
+        float: left;
+    }
+    .bu-remove{
+        color: $color-normal;
+        float: right;
+        width: 20px;
+        &:hover{
+            color: $color-sub;
+        }
+    }
+}

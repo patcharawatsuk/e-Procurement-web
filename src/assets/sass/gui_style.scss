@@ -1,0 +1,388 @@
+/* import bootstrap */
+@import "bootstrap-sprockets";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/scaffolding";
+@import "bootstrap/_forms";
+/* theme color */
+@import "theme/_blue";
+/* variable */
+@import "modules/_variables";
+/* mixins */
+@import "modules/_mixins";
+/* layout */
+@import "partails/layout/_header";
+@import "partails/layout/_access"; //center theme
+@import "partails/layout/_navleft";
+@import "partails/layout/_template_frontend";
+@import "partails/layout/_responsive";
+@import "partails/layout/_tab_menu";
+/* import icon */
+@import "partails/other/_icons";
+@import "partails/other/_icomoon";
+/* import other style */
+@import "partails/other/_tooltip";
+@import "partails/other/_utilities";
+@import "partails/other/_wizardstep";
+@import "partails/table/_table";
+@import "partails/table/_search_table";
+@import "partails/default/_forms";
+@import "partails/default/_modal";
+@import "partails/default/_popup"; //popup for pr gr
+@import "partails/default/_buttons";
+@import "partails/default/_dropdown";
+@import "partails/default/_calendar";
+@import "partails/default/_pagination";
+@import "partails/default/_approval";
+@import "partails/default/_content";
+@import "feature/process/_pr";
+
+/* gui style */
+.gui-left-menu {
+    width: 200px;
+    background-color: $color-background;
+    border-left: 1px solid;
+    height: calc(100% - 60px);
+    position: fixed;
+    overflow: hidden;
+    top: 60px;
+    left: 0;
+    padding: 30px 0;
+    overflow-y: auto;
+}
+.gui-menu{
+    padding: 10px 20px;
+    color: $color-normal;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    &.active {
+        color: $color-info;
+        background-color: rgba(204, 236, 254, 0.4);//$color-background;
+        &:hover {
+            color: $color-info;
+            background: $color-background-row;
+        }
+    }
+    &:hover{
+        color: $color-normal;
+        background: $color-background-row;
+    }
+}
+.gui-content{
+    width: calc(100% - 220px);
+    margin-left: 220px;
+    margin-top: 0;
+    padding: 0 20px 20px 20px;
+    section{
+        padding-top: 100px;
+        padding-bottom: 60px;
+        &:not(:last-child){
+            border-bottom: 1px solid $color-border;
+        }
+    }
+}
+.box-color{
+    display: flex;
+    flex-direction: column;
+    width: 160px;
+    height: 160px;
+    padding: 20px;
+    color: $color-white;
+}
+.color-name{
+    font-size: $font-menu;
+    font-weight: 700;
+}
+.color-hex{
+    margin-top: auto;
+}
+.box-set-icon{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+}
+.box-icon-menu {
+    width: calc(25% - 20px);
+    order: 3;
+}
+.box-icon-normal {
+    width: calc(20% - 20px);
+    order: 4;
+}
+.box-icon-single {
+    //order: 1;
+}
+.box-icon-double {
+    width: calc(50% - 20px);
+    order: 2;
+}
+
+/* css for GUI only */
+.icon-action-dot,
+.icon-plus-circle-2{
+    font-size: 20px;
+}
+
+.gui-row-button{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 50px;
+    //padding: 0 50px;
+    align-items: center;
+}
+.gui-col-button{
+    text-align: center;
+    min-width: 100px;
+    //margin-bottom: 20px;
+    .ghost{
+        margin: 2px 0;
+    }
+    .row-action {
+        position: static !important;
+        margin: 0;
+        top: unset;
+        right: unset;
+        .box-dropdown-title{
+            margin: 0 auto;
+            &.exam{
+                border: 1px solid $color-border;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.gui-col-code {
+    //padding-top: 7px;
+}
+
+/* GUI responsive */
+@media (max-width: $responsive-ipad-v) {
+    .gui-left-menu {
+        display: none;
+    }
+    .gui-content{
+        width: 100%;
+        margin-left: 0;
+        padding-top: 20px;
+    }
+    .box-icon-menu,.box-icon-normal {
+        width: calc(33.33% - 20px);
+        order: 3;
+    }
+    .box-icon-single {
+        width: calc(50% - 20px);
+        order: 2;
+    }
+}
+
+// tag style
+.code{
+    background: $color-background;
+    padding: 20px;
+}
+.code-line{
+    font-family: monospace;
+}
+.c-tag{
+    color: #2f6f9f;
+}
+.c-att{
+    color: #4f9fcf;
+}
+.c-class{
+    color: #d44950;
+}
+.c-content{
+}
+.tab-1{
+    margin-left: 30px;
+}
+.tab-2{
+    margin-left: 60px;
+}
+
+// illustration
+.illus-80x{
+    td{
+        min-width: 120px;
+        max-width: 120px;
+        padding: 20px;
+        vertical-align: middle;
+        text-align: center;
+        img{
+            width: 80px;
+            height: 80px;
+        }
+    }
+}
+.illus-160x{
+    td{
+        min-width: 200px;
+        max-width: 200px;
+        padding: 20px;
+        vertical-align: middle;
+        text-align: center;
+        &:first-child{
+            width: 120px;
+            min-width: 120px;
+        }
+        img{
+            width: 160px;
+            height: 160px;
+        }
+    }
+}
+
+// logo
+.box-logo{
+    width: 90%;
+    padding: 20px;
+    border: 1px solid $color-border;
+}
+
+// typography
+.gui-typo{
+    td{
+        padding-right: 40px;
+        padding-bottom: 40px;
+        white-space: nowrap;
+        &:not(:first-child){
+            padding-right: 40px;
+        }
+    }
+}
+$font-special-heading: 30px;
+.font-special-heading {
+	font-size: $font-special-heading;
+}
+// not used in css font size for GUI only
+$font-smallest: 9px;
+.font-smallest{
+    font-size: $font-smallest;
+}
+
+.icon-special{
+    position: static;
+    margin-left: 0;
+}
+
+// attachment
+.attachment-list{
+    li{
+        min-height: 40px;
+        &.attachment-success{
+            padding: 10px 10px 10px 15px;
+        }
+        &.attachment-upload{
+            padding-top: 15px;
+        }
+        .pull-left{
+            max-width: calc(100% - 40px);
+        }
+    }
+    .attachment-detail{
+        margin-top: 3px;
+    }
+    .attachment-sub{
+        margin-top: 3px;
+        font-size: $font-size-xxs;
+    }
+
+    .attachment-success.bg-white{
+        background-color: $color-white;
+    }
+}
+.box-upload-attachment{
+    padding: 15px 10px 5px 15px;
+}
+// Square Upload //
+.box-file-area{
+    width: 100%;
+    padding: 15px 15px 5px;
+    border-top: 1px solid $color-border;
+    overflow: hidden;
+}
+.box-file-add{
+    float: left;
+    width: 100px;
+    height: 100px;
+    border: dashed 1px $color-info;
+    background-color: #e9f1f8;
+    padding: 20px;
+    color: $color-info;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    margin-right: 10px;
+    display: inline-block;
+    i{
+        font-size: 30px;
+    }
+    .text-upload{
+        font-size: 10px;
+        line-height: 12px;
+        margin-top: 5px;
+    }
+}
+.box-file-up{
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    position: relative;
+}
+.img-upload-wrap{
+    display: table;
+    width: 100px;
+    height: 100px;
+    .img-box{
+        width: 100%;
+        height: 100%;
+        border: 1px solid $color-info-light;
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+        background-color: $color-background;
+    }
+    .img-files {
+        max-width: 40px;
+        max-height: 40px;
+    }
+}
+.img-name{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    background-color: rgba(88,101,117,.8);
+    padding: 0 5px;
+    line-height: 20px;
+    color: #fff;
+    font-size: $font-size-xs;
+    text-align: center;
+}
+.img-remove{
+    color: $color-sub;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    &:hover{
+        color: #23527c;
+    }
+}
+.loading-bar{
+    background-color: $color-info-light;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    .load-progress{
+        background-color: $color-link;
+        height: 5px;
+        width: 20%;
+    }
+}

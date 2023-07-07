@@ -1,0 +1,322 @@
+.modal-leftmenu{
+    width: 55px;
+    height: 100%;
+    flex-flow: column wrap;
+    border-right: 1px solid $color-border;
+    padding: 10px;
+}
+.menu-list{
+    li{
+        margin-bottom: 10px;
+        display: table;
+        position: relative;
+        .eform-tooltip{
+            left: 45px;
+        }
+    }
+}
+.menu-item{
+    display: table-cell;
+    border-radius: 2px;
+    width: 34px;
+    height: 34px;
+    color: $color-normal;
+    text-align: center;
+    vertical-align: middle;
+    &:hover{
+        background-color: $color-background-action;
+        color: $color-normal;
+    }
+    &.active{
+        background-color: $color-background-action;
+        color: $color-info;
+    }
+}
+.modal-submenu{
+    display: none;
+    width: 250px;
+    min-width: 250px;
+    height: 100%;
+    border-right: 1px solid $color-border;
+    overflow-y: auto;
+    overflow-x: hidden;
+    .submenu-inner{
+        min-height: 485px;
+        min-width: 250px;
+    }
+    .menu-main{
+        padding: 0 20px;
+        background-color: $color-background;
+        border-bottom: 1px solid $color-border;
+        color: $color-normal;
+        line-height: 32px;
+        font-size: $font-size-xs;
+        font-weight: bold;
+    }
+    &.menu-calculate{
+        overflow: hidden;
+    }
+}
+.submenu-list{
+    li{
+        position: relative;
+        &.bg-subsection{
+            background-color: $color-background;
+        }
+        &:hover{
+            .menu-hint{
+                display: block;
+            }
+        }
+    }
+}
+.submenu-item{
+    display: block;
+    padding: 0 20px;
+    line-height: 40px;
+    border-bottom: 1px solid $color-border;
+    color: $color-sub;
+    font-size: $font-normal;
+    white-space: nowrap;
+    &:hover{
+        background-color: $color-background-action;
+        color: $color-sub;
+    }
+    > i{
+        position: relative;
+        top: -3px;
+        margin-right: 10px;
+    }
+}
+.submenu-setting{
+    min-height: 40px;
+    padding:0 20px;
+    border-bottom: 1px solid $color-border;
+    color: $color-normal;
+    font-size: $font-normal;
+    &.has-dd{
+        height: auto;
+        padding: 15px 20px;
+    }
+    .label-dropdown{
+        margin-bottom: 10px;
+    }
+    .pull-left{
+        padding: 11px 0;
+        width: calc(100% - 60px);
+    }
+    .pull-right{
+        height: 24px;
+        overflow: hidden;
+        margin-top: 8px;
+    }
+}
+.menu-calculate{
+    .submenu-inner{
+        height: 100%;
+        position: relative;
+    }
+}
+.calculate-top{
+    height: calc(100% - 240px);
+    overflow-y: auto;
+}
+.submenu-item-form{
+    padding: 0 20px;
+    border-bottom: 1px solid $color-border;
+    color: $color-sub;
+    font-size: $font-normal;
+    white-space: nowrap;
+    &.sub-cal{
+        background-color: $color-background;
+    }
+    .qn-title{
+        color: $color-normal;
+        line-height: 20px;
+        padding: 10px 0;
+        
+        > i{
+            position: relative;
+            top: -2px;
+            margin-right: 10px;
+        }
+        .text-ellipsis{
+            width: 210px;
+            display: inline-block;
+            @extend .ellipsis;
+            &.has-icon{
+                width: 178px;
+            }
+        }
+        .section-sub-title{
+            display: block;
+            font-size: $font-subtitle;
+            color: $color-sub;
+            padding-left: 30px;
+            line-height: 15px;
+        }
+    }
+    .dropdown-score-title{
+        color: $color-normal;
+    }
+    .form-group{
+        margin-bottom: 10px;
+    }
+    .qn-sub-sum{
+        text-align: right;
+        color: $color-info;
+        font-weight: bold;
+    }
+    .qn-sub-link{
+        color: $color-link;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+.calculate-bottom{
+    position: absolute;
+    bottom: 0;
+    min-height: 94px;
+    width: 249px;
+    background-color: $color-background-cal;
+    border-top: 2px solid $color-info;
+    padding: 10px 20px;
+    &.full{
+        top: 32px;
+        height: calc(100% - 32px);
+    }
+    &.min-h-57 {
+        min-height: 57px;
+    }
+    .total-title{
+        color: $color-title;
+        font-size: $font-menu;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .total-score{
+        color: $color-info;
+        font-size: $font-heading;
+        font-weight: bold;
+        text-align: right;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $color-border;
+    }
+    .pass-score{
+        padding: 20px 0 0;
+        .cal-help{
+            position: relative;
+            top:-1px;
+        }
+        .form-group{
+            margin: 10px 0 0;
+            position: relative;
+            .form-control{
+                padding-right: 45px;
+            }
+        }
+    }
+    .sub-input-score{
+        color: $color-sub;
+        font-size: $font-subtitle;
+        margin-top: 10px;
+    }
+}
+.pass-score-info{
+    position: absolute;
+    right: 15px;
+    top: 7px;
+    &.disabled{
+        color: $color-disable;
+    }
+}
+.cal-box-ctrl{
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+.cal-group{
+    overflow: hidden;
+}
+.cal-title{
+    color: $color-title;
+    font-size: $font-menu;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.cal-detail{
+    padding-bottom: 10px;
+    overflow: hidden;
+    color: $color-normal;
+    line-height: 20px;
+    .cal-text{
+        float: left;
+        width: 135px;
+        @extend .ellipsis;
+        i{
+            position: relative;
+            top: -2px;
+            margin-right: 10px;
+        }
+    }
+    .cal-percentage{
+        float: right;
+        .sum{
+            color: $color-info;
+            font-size: $font-heading;
+            font-weight: bold;
+        }
+    }
+}
+.line-end-group{
+    margin: 20px 0;
+    height: 1px;
+    background-color: $color-border;
+}
+.cal-help{
+    color: $color-normal;
+    &:hover{
+        color: $color-sub;
+    }
+}
+.submenu-version{
+    margin: 0;
+    padding: 0;
+    .version-items{
+        padding: 10px 20px;
+        border-bottom: 1px solid $color-border;
+    }
+}
+.sm-box-tile{
+    margin-bottom: 5px;
+    .icon-action-dot{
+        font-size: $font-pagetitle;
+    }
+    .box-dropdown-list{
+        width: 194px;
+        i{
+            position: relative;
+            top: -1px;
+            margin-right: 10px;
+        }
+    }
+}
+.sm-version-title{
+    color: $color-title;
+    font-size: $font-menu;
+    font-weight: bold;
+    line-height: 20px;
+    width: 180px;
+    @extend .ellipsis;
+}
+.sm-version-active{
+    color: $color-info;
+    font-size: $font-subtitle;
+    margin-bottom: 5px;
+}
+.sm-version-detail{
+    color: $color-sub;
+    font-size: $font-subtitle;
+}

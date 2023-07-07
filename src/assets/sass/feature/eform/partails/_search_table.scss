@@ -1,0 +1,131 @@
+.box-top-search {
+    .box-dropdown {
+        float: left;
+        .box-dropdown-title {
+            font-size: $font-normal;
+            display: inline-block;
+            display: block \9;
+            padding: 0 45px 0 15px;
+            line-height: 32px;
+            border: 1px solid $color-border;
+            min-width: 150px;
+            cursor: pointer;
+            @include border-left-radius(2px);
+            >i {
+                top: 5px;
+                right: 8px;
+                font-size: 22px;
+                position: absolute;
+            }
+        }
+        &+.box-dropdown-list,
+        &+.form-dropdown-list {
+            width: 100%;
+        }
+    }
+    >.form-control {
+        @include border-radius(0);
+        border-left: none;
+        border-right: none;
+        border-top-color: $color-border !important;
+        border-bottom-color: $color-border !important;
+        float: left;
+        width: 230px;
+        &.input-search {
+            width: 302px;
+            border-left: 1px solid $color-border;
+        }
+    }
+    .btn-op-default {
+        @include border-left-radius(0);
+        min-width: 80px;
+        width: 80px \9;
+    }
+}
+
+.box-top-dropdown {
+    .box-dropdown-title {
+        padding: 0 45px 0 15px;
+        line-height: 32px;
+        border: 1px solid $color-border;
+        min-width: 150px;
+        cursor: pointer;
+        @include border-radius(2px);
+        >i {
+            top: 5px;
+            right: 8px;
+            font-size: 22px;
+            position: absolute;
+        }
+        &.form-error {
+            border: 1px solid $color-fail;
+        }
+    }
+    .box-dropdown {
+        .box-dropdown-list {
+            // width: 200px;
+            width: 100%;
+			ul{
+				max-height: 210px;
+				overflow-y: auto;
+			}
+        }
+    }
+}
+
+.box-indetail-table {
+    width: 100%;
+    height: 36px;
+    min-width: 170px;
+    &.error {
+        border: 1px solid $color-red;
+        .warn-msg {
+            float: left;
+            line-height: 1.8em;
+            i,
+            span {
+                color: $color-red;
+            }
+            span {
+                top: 2px;
+                position: relative;
+            }
+        }
+    }
+    .box-dropdown {
+        float: right;
+        width: 50%;
+        .box-dropdown-title {
+            display: inline-block;
+            display: block \9;
+            line-height: 32px;
+            border: 1px solid $color-border;
+            min-width: 100%;
+            cursor: pointer;
+            @include border-left-radius(2px);
+            background: $color-white;
+            text-align: left;
+            padding: 0 35px 0 15px;
+            >i {
+                top: 8px;
+                right: 5px;
+                font-size: 22px;
+                position: absolute;
+            }
+        }
+    }
+    >.form-control {
+        @include border-radius(0);
+        border-left: none;
+        border-right: none;
+        border-top-color: $color-border !important;
+        border-bottom-color: $color-border !important;
+        float: left;
+        width: 50%;
+    }
+    .box-dropdown-list {
+        li {
+            min-width: 100px;
+        }
+    }
+}

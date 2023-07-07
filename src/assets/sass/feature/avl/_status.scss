@@ -1,0 +1,29 @@
+.status-color{
+    &.awaiting-warn{
+        color: $color-warning;
+        a{
+            color: $color-warning;
+        }
+    }
+    &.upcoming{
+        color: $color-sub;
+    }
+    &.awaiting{
+        color: $color-info;
+    }
+    &.no-response{
+        color: $color-placeholder;
+    }
+    &.completed{
+        color: $color-success;
+    }
+    &.rejected{
+        color: $color-fail;
+    }
+    &.cancelled{
+        color: $color-title;
+        a{
+            color: $color-title;
+        }
+    }
+}

@@ -1,0 +1,233 @@
+//wizard-steps
+
+.wizard-steps {
+    list-style: none;
+    display: block;
+    width: 80%;
+    margin: 50px auto;
+    overflow: hidden;
+    position: relative;
+
+    li {
+        display: block;
+        text-align: center;
+        float: left;
+        position: relative;
+
+        &:before {
+            display: block;
+            content: "";
+            border-top: 2px solid #C4CCD6;
+            width: 100%;
+            height: 2px;
+            font-size: 0;
+            overflow: hidden;
+            position: relative;
+            top: 16px;
+            z-index: 1;
+        }
+
+        &.step1 {
+            //&:first-child
+            &.boxstep:before {
+                max-width: 50%;
+                left: 50%;
+            }
+        }
+
+        &.steplast {
+            //&:last-child
+            &.boxstep:before {
+                left: 0;
+                max-width: 50%;
+            }
+        }
+
+        .step {
+            height: 40px;
+            position: relative;
+            z-index: 3;
+            display: block;
+            text-align: center;
+
+            > i {
+                @include border-radius(50%);
+                width: 10px;
+                height: 10px;
+                display: inline-block;
+                margin-top: 10px;
+                background-repeat: no-repeat;
+                background-image: url('../images/frontend/default_step_2x.png');
+                background-image: url('../images/frontend/default_step_1x.png')\9;
+                background-size: 10px 10px;
+            }
+        }
+
+        .title {
+            display: block;
+            margin-top: 5px;
+            max-width: 100%;
+            color: $color-sub;
+            z-index: 4;
+            text-align: center;
+            table-layout: fixed;
+            word-wrap: break-word;
+        }
+
+        &.active {
+            .step > i {
+                @include border-radius(50%);
+                width: 28px;
+                height: 28px;
+                margin-top: 0;
+                background-image: url('../images/frontend/active_step_2x.png');
+                background-image: url('../images/frontend/active_step_1x.png')\9;
+                background-size: 28px 28px;
+            }
+
+            .title {
+                color: $theme-shade-1;
+                font-size: 14px;
+            }
+        }
+
+        &.complete {
+            .step > i {
+                width: 20px;
+                height: 20px;
+                background-image: url('../images/frontend/complete_step_2x.png');
+                background-image: url('../images/frontend/complete_step_1x.png')\9;
+                background-size: 20px 20px;
+                margin-top: 4px;
+                border: none;
+            }
+
+            .border {
+                background-color: $color-link;
+                display: block;
+                position: absolute;
+                top: 15px;
+                left: 50%;
+                height: 4px;
+                width: 100%;
+                z-index: 2;
+            }
+
+            .title {
+                color: $theme-shade-1;
+                font-size: 14px;
+            }
+        }
+
+        &.steplast {
+            //&:last-child
+            &.complete {
+                .border {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.wizard-2-step {
+    .wizard-steps {
+        li {
+            width: 50%;
+        }
+    }
+}
+
+.wizard-3-step {
+    .wizard-steps {
+        li {
+            width: 33.33%;
+        }
+    }
+}
+
+.wizard-4-step {
+    .wizard-steps {
+        li {
+            width: 25%;
+        }
+    }
+}
+@media (max-width: 414px) {
+    .wizard-steps {
+        width: 100%;
+    }
+}
+
+
+// new step
+.row-step{
+    padding: 10px 0;
+    margin: 0 0 20px;
+    overflow: hidden;
+    text-align: center;
+    background-color: $color-white;
+    li{
+        display: inline-block;
+        overflow: hidden;
+        line-height: 20px;
+        font-size: $font-menu;
+    }
+    .active, .complete{
+        .step-num, .step-name{
+            font-weight: bold;
+        }
+        .step-name{
+            color: $color-info;
+        }
+        .step-num{
+            background-color: $color-info;
+        }
+    }
+    .complete{
+        .step-border{
+            background-color: $color-info;
+        }
+    }
+    &.left-step {
+        margin: 0 0 10px;
+        padding: 0;
+        text-align: left;
+        background-color: transparent;
+    }
+}
+.step-num{
+    float: left;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: $color-disable;
+    color: $color-white;
+    text-align: center;
+}
+.step-name{
+    float: left;
+    color: $color-sub;
+    margin-left: 10px;
+}
+.step-border{
+    float: left;
+    width: 40px;
+    height: 2px;
+    background-color: $color-disable;
+    margin: 8px 10px;
+}
+.row-table{
+    display: table;
+    width: 100%;
+    .col-table{
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+@media (max-width: $responsive-ipad-v) {
+    .step-border{
+        width: 20px;
+    }
+}

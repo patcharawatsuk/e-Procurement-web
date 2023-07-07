@@ -1,0 +1,205 @@
+.eform-tooltip{
+    display: none;
+    position: absolute;
+    border-radius: 2px;
+    background-color: $color-title;
+    padding: 5px;
+    line-height: 15px;
+    font-size: $font-normal;
+    width: auto;
+    left: 11px;
+    top: 0;
+    z-index: 1000;
+    &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+    }
+    &.arr-left{
+        &:after {
+            top: 50%;
+            left: -5px;
+            margin-top: -4px;
+            border-width: 4px 5px 4px 0;
+            border-style: solid;
+            border-color: transparent $color-title transparent transparent;
+        }
+    }
+    &.arr-right{
+        &:after {
+            top: 50%;
+            right: -5px;
+            margin-top: -4px;
+            border-width: 4px 0 4px 5px;
+            border-style: solid;
+            border-color: transparent transparent transparent $color-title;
+        }
+    }
+    &.arr-top{
+        &:after {
+            top: -4px;
+            left: 50%;
+            margin-left: -4px;
+            border-width: 0 4px 4px 4px;
+            border-style: solid;
+            border-color: transparent transparent $color-title transparent;
+        }
+    }
+    &.arr-bottom{
+        &:after {
+            top: 100%;
+            left: 50%;
+            margin-left: -4px;
+            border-width: 4px 4px 0 4px;
+            border-style: solid;
+            border-color: $color-title transparent transparent transparent;
+        }
+    }
+    &.arr-top-right{
+        &:after {
+            top: -4px;
+            right: 5px;
+            margin-left: -4px;
+            border-width: 0 4px 4px 4px;
+            border-style: solid;
+            border-color: transparent transparent $color-title transparent;
+        }
+    }
+    .title{
+        color: $color-white;
+        white-space: nowrap;
+    }
+    .subtitle{
+        padding-top: 5px;
+        color: $color-sub;
+        font-size: $font-subtitle;
+    }
+}
+.menu-hint{
+    display: none;
+    position: absolute;
+    border-radius: 2px;
+    background-color: $color-title;
+    padding: 5px 10px 0 10px;
+    width: 300px;
+    left: 255px;
+    top: 0;
+    z-index: 99;
+    &:after {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: -5px;
+        margin-top: -4px;
+        border-width: 4px 5px 4px 0;
+        border-style: solid;
+        border-color: transparent $color-title transparent transparent;
+    }
+    .title{
+        color: $color-white;
+        white-space: nowrap;
+    }
+    .subtitle{
+        padding-top: 5px;
+        color: $color-sub;
+        font-size: $font-size-xs;
+        line-height: 13px;
+    }
+}
+.form-example{
+    border-top: 1px solid $color-border;
+    padding: 10px 0;
+    margin-top: 10px;
+    label{
+        color: $color-white;
+    }
+    .radio, .checkbox{
+        margin: 0;
+        height: 36px;
+        padding: 9px 0 9px 20px;
+        
+        &.inline{
+            display: inline-block;
+        }
+        &.setmargin{
+            padding: 9px 0;
+        }
+    }
+    .radio{
+        &.setmargin{
+            input{
+                margin: 1px 0 0 -6px !important;
+            }
+        }
+    }
+    .checkbox{
+        &.setmargin{
+            input{
+                margin: 2px 0 0 -6px !important;
+            }
+        }
+    }
+    .form-group{
+        margin-bottom: 0;
+    }
+    .box-date{
+        margin-top: 20px;
+    }
+    .box-form-inline-wrap{
+        padding-top: 10px;
+    }
+    .box-form-inline{
+        overflow: hidden;
+        label{
+            color: $color-white;
+            line-height: 34px;
+            margin: 0 10px 0 0;
+        }
+        .form-control{
+            width: 150px;
+        }
+    }
+}
+.example-title{
+    color: $color-white;
+    font-size: $font-menu;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.example-table{
+    width: 100%;
+    color: $color-white;
+    border: none;
+    border-collapse: collapse;
+    .bg-white{
+        background-color: $color-white;
+        color: $color-normal;
+    }
+    .rowspace{
+        th,td{
+            height: 10px;
+        }
+    }
+    th,td{
+        height: 36px;
+        padding: 0 10px;
+    }
+    th{
+        font-size: $font-menu;
+        border-bottom: 1px solid $color-border;
+    }
+}
+.box-time{
+    .form-control{
+        width: 60px;
+        display: inline-block;
+    }
+    .color-white{
+        color: $color-white;
+    }
+    .box-dropdown{
+        display: inline-block;
+        margin-left: 10px;
+        width: 80px;
+    }
+}

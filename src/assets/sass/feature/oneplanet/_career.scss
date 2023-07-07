@@ -1,0 +1,165 @@
+.banner-carrer{
+	width: 100%;
+	height:440px;
+	margin: 0 auto;
+	overflow: hidden;
+	max-width: 1280px;
+	img{
+		width: 100%;
+	}
+}
+.career-wrap{
+	overflow: hidden;
+	padding: 40px 0 30px;
+}
+.bg-career{
+	width: 100%;
+	height: 126px;
+	position: absolute;
+	background: #0070C2;
+}
+.cw-header{
+	background: #0070C2;
+}
+.career-title{
+	color: #FFFFFF;
+	font-size: 36px;
+	line-height: 56px;
+	font-family: 'AnuyartLight';
+}
+.career-pos-back{
+	margin-bottom: 30px;
+	i{
+		top: -1px;
+		font-size: 16px;
+		position: relative;
+	}
+}
+.career-pos-title{
+	color: #0070C2;
+	font-size: 18px;
+	padding-bottom: 10px;
+	margin: 0 60px 30px 0;
+	border-bottom: 1px solid #E6E8EB;
+	&.cpt-detail{
+		font-weight: bold;
+	}
+}
+.career-col-left{
+	width: 70%;
+	float: left;
+	overflow: hidden;
+}
+.career-submit{
+	width: 30%;
+	float: right;
+	padding: 0 0 0 18px;
+	border-left: 2px solid #E2E2E2;
+}
+.sm-title{
+	color: #555;
+	margin: 14px 0;
+	color: #0070C2;
+	font-size: 14px;
+}
+.sm-mailto{
+	color: #333;
+	font-size: 16px;
+	font-weight: bold;
+}
+.sm-mailto-detail{
+	color: #7e8ea4;
+	font-size: 16px;
+    font-weight: normal;
+}
+.pos-list{
+	overflow: hidden;
+	margin-bottom: 20px;
+	li{
+		float: left;
+		width: 310px;
+		margin:0 30px 30px 0;
+		&.clearfix{
+			margin: 0;
+			width: 100%;
+			float: none;
+			clear: both;
+		}
+	}
+}
+.pos-name{
+	font-size: 16px;
+	margin-bottom: 5px;
+	a{
+		color: #000000;
+		transition: all .5s;
+		&:hover{
+			color: #0070C2;
+		}
+	}
+}
+.pos-location{
+	color: #7E8EA4;
+	font-size: 14px;
+}
+
+.job-detail{
+    color: #555555;
+    font-size: 16px;    
+    margin: 0 60px 30px 0;
+    .jd-title{
+        margin-top: 25px;
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+    .jd-subtitle{
+        padding-left: 15px;
+        li{
+            list-style-type: disc;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .inner-wrap.career-wrap {
+        padding: 40px;
+    }
+    .career-col-left {
+        float: none;
+        width: 100%;
+    }
+    .pos-list>li {
+        float: left;
+        max-width: 310px;
+        margin: 0 30px 35px 0;
+        width: calc(50% - 30px);
+    }
+    .career-submit {
+        width: 100%;
+        float: none;
+        height: auto;
+        border-left: none;
+        padding: 0 0 40px 0;
+    }
+}
+
+@media (max-width: 736px) {
+    .inner-wrap.career-wrap {
+        padding: 30px 37px;
+    }
+    .career-title {
+        font-size: 40px;
+        line-height: 62px;
+        margin-bottom: 30px;
+    }
+    .career-pos-title {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+    .pos-list>li {
+        width: 100%;
+        float: none;
+        max-width: auto;
+        margin: 0 30px 20px 0;
+    }
+}

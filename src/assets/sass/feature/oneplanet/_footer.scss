@@ -1,0 +1,142 @@
+.footer-wrap {
+    background: #232C36;
+    color: #fff;
+    overflow: hidden;
+}
+
+.ft-inner {
+    height: 215px;
+    padding: 40px 0 0 0;
+}
+
+.ft-logo {
+    background: url(../images/oneplanet/footer/logo.png);
+    background-size: 100%;
+    width: 197px;
+    height: 30px;
+    margin: 2px 58px 0 0;
+    float: left;
+}
+
+.ft-menu {
+    float: left;
+    margin: 11px 0 0 0;
+    width: calc(100% - 255px);
+    li{
+        float: left;
+        width: 33.33%;
+    }
+}
+
+.ft-menu-title {
+    color: #fff;
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 15px;
+    margin-bottom: 15px;
+}
+
+.ft-menu-link{
+    display: block;
+    color: #BEC0C3;
+    line-height: 1.55em;
+    transition: all .25s ease-out;
+    &:hover{
+        color: #00B5E2;
+    }
+    &:focus,&:active{
+        outline: none;
+        color: #BEC0C3;
+    }
+}
+
+.ft-copy {
+    height: 81px;
+    border-top: 1px solid #3d414a;
+    line-height: 23px;
+    padding: 20px 0 0 0;
+    color: #93959A;
+}
+
+.logo-line {
+    width: 1px;
+    height: 23px;
+    background: #7e8086;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 6px 0 8px;
+}
+
+.ptvn-logo {
+    display: inline-block;
+    width: 106px;
+    height: 23px;
+    background: url(../images/oneplanet/footer/logo_ptvn.png) no-repeat left center;
+    background-size: 100%;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.ascend-logo {
+    display: inline-block;
+    width: 78px;
+    height: 23px;
+    background: url(../images/oneplanet/footer/logo_ascend.png) no-repeat left center;
+    background-size: 100%;
+    vertical-align: middle;
+}
+
+@media (max-width: 1024px) {
+    .ft-inner {
+        padding: 35px 40px;
+    }
+    .ft-logo {
+        width: 25%;
+        margin: 2px 0 0 0;
+        background-size: 150px 23px;
+        background-repeat: no-repeat;
+    }
+    .ft-menu {
+        width: 75%;
+        margin: 10px 0 0 0;
+    }
+    .ft-copy {
+        padding: 20px 40px 0 40px;
+    }
+}
+
+@media (max-width: 736px) {
+    .ft-inner {
+        height: auto;
+        padding: 33px 40px;
+    }
+    .ft-logo {
+        float: none;
+        width: 100%;
+        background-size: 200px;
+    }
+    .ft-menu {
+        margin: 0;
+        float: none;
+        width: 100%;
+        li {
+            width: 100%;
+            float: none;
+            margin-top: 30px;
+        }
+    }
+    .ft-copy {
+        height: auto;
+        padding-bottom: 50px;
+        padding: 20px 0 50px 0;
+    }
+    .copy-right,
+    .productby {
+        margin-left: 30px;
+        float: none !important;
+    }
+    .copy-right {
+        margin-bottom: 15px;
+    }
+}

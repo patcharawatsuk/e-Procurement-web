@@ -1,0 +1,80 @@
+/* column set */
+$col-left-size: 90px; //65px;
+$col-right-size: 961px; //986px;
+$header-left-size: 245px;
+/* responsive set*/
+$responsive-mobile-v: 414px; // iPhone 6/7/8 Plus
+$responsive-mobile-h: 736px; // iPhone horizontal
+$responsive-ipad-v: 812px; // iPhone X horizontal (iPad horizontal 768px)
+$responsive-ipad-h: 1024px; // iPad horizontal and Desktop min size
+/*font set*/
+$font-family: arial,sans-serif;
+$font-size-xxs: 10px;
+$font-size-xs: 11px;
+$font-subtitle: 12px;
+$font-normal: 13px;
+$font-menu: 14px;
+$font-heading: 18px;
+$font-pagetitle: 20px;
+$font-special: 22px;
+$font-size-xxl: 26px;
+/* color set */
+$color-title: #3B444F;
+$color-normal: #586575;
+$color-sub: #7E8EA4;
+$color-sub-header: #7D8EA5;
+$color-disable: #BEC4CB;
+$color-success: #77D042;//#64BF2D;
+$color-fail: #D82C22;
+$color-warning: #F7B735;
+$color-info: #297CBB;
+$color-info-hover: #226DA5;
+$color-info-dark: #1D4174;
+$color-info-light: #BCCEE3;
+$color-link: #009EFB;
+$color-favourite: #f78d35;
+$color-favourite-hover: #eb7d32;
+$color-placeholder: #999999;
+/*link set*/
+$link-normal: $color-title;
+$link-active: $color-info;
+$link-hover: $link-active;
+/* background set */
+$color-background: #F4F5F8;
+$color-background-success: #F3FBED;
+$color-background-success-rgba: rgba(242, 251, 237, 0.7);
+$color-background-fail: #FBEAEA; //#F6D8DD;
+$color-background-warning: #FFFBEF;
+$color-background-warning-rgba: rgba(255, 251, 239, 0.7);
+$color-background-info: #E2F3FF;
+$color-background-info-rgba: rgba(225, 242, 255, 0.7);
+$color-background-row: #e8ecf1;
+$color-background-row-detail: #F8F8F8;
+$color-select-hover: #EDF1F4;
+$color-background-active-menu: #E9ECF3;
+/* border set*/
+$color-border: #E6E8EB;
+$color-border-hover: #91A5BF;
+$color-border-focus: #007FCB;
+$color-border-success: #E4F3DB;
+$color-border-fail: #F7D5D3; //#EFCAC8;
+$color-border-warning: #FEEFD0;
+$color-border-info: #CFE3F1;
+$color-border-disable: #E2E2E2;
+$color-bg-disable: #ECEEF2;
+$color-border-dropdown: #EDF2F5;
+$color-border-light: #E0E4F0;
+$color-border-more-light: #F9FAFB;
+$color-border-row-detail: #d8d8d8;
+$color-border-2: #DCDEE1;
+/* frontend set*/
+$fe-color-background: #E9EEF5;
+$fe-color-border: #c8d4e4;
+/* basic color*/
+$color-red: #E7372D;
+$color-orange: #fa7029;
+$color-white: #ffffff;
+$color-light-blue: #CCECFE;
+$color-medium-green: #5CB029;
+$color-medium-grey: #C4C9D0;
+$color-accept: #0c91e0;

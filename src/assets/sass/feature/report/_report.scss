@@ -1,0 +1,79 @@
+.box-report-heading{
+	font-size: $font-heading;
+	line-height: 20px;
+	margin-top:15px;
+	color: $color-title;
+	i{
+		margin-right: 10px;
+		vertical-align: top;
+	}
+}
+.req-box-content{
+	.body-report{
+		.req-title{
+			font-size:$font-heading;
+			color: $color-title;
+			text-transform: none;
+			margin-bottom: 20px;
+			font-weight: normal;
+		}
+		.req-items {
+		    line-height: 20px;
+		    padding: 10px 14px;
+		}
+		.icon-download{
+			color:$color-info;
+		}
+	}
+}
+.report-range{
+	label{
+		font-size:$font-normal;
+		color: $color-normal;
+	}
+	.radio{
+		padding:0;
+		margin:0;
+		label{
+			margin-bottom:10px;
+		}
+	}
+	.form-group{
+		padding-left: 20px;
+	}
+	
+	.box-calendar{
+		label{
+			display:block;
+			&:before {
+				position: absolute;
+				font-family: 'icomoon';
+				top: 0;
+				right: 15px;
+				content: "\e920";
+				font-size: $font-pagetitle;
+				color:$color-sub;
+				margin-top:35px;
+				z-index: 0;
+			}
+		}
+		.form-control{
+			background: transparent;
+			position: relative;
+			&.icon-calendar {
+				background-image: url('../images/form/bg_calendar_on.png');
+				background-image: url('../images/form/bg_calendar_on1x.png') \9;
+				background-position: 95% center;
+				background-repeat: no-repeat;
+				background-size: 20px 18px;
+			}
+		}
+		.box-calendar-pop{
+			display:none;
+		}
+		.show-calendar{
+			position:absolute;
+			display:block;
+		}
+	}
+}

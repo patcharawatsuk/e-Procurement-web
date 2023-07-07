@@ -1,0 +1,197 @@
+.filter-calendar-eq {
+    top: 34px;
+    z-index: 9;
+    width: 408px;
+    position: absolute;
+    border-radius: 2px;
+    padding: 20px 0 0 20px;
+    background: $color-white;
+    border: 1px solid $color-border;
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.04);
+    -webkit-box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.04);
+    -moz-box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.04);
+
+    .calendar-popup-title {
+        font-size: 14px;
+        color: $color-normal;
+    }
+
+    label {
+        margin: 15px 0 10px;
+        color: $color-normal;
+        &.radio {
+            margin-left: 1px;
+            /*input {
+                margin: 3px 0 0 -20px;
+            }*/
+        }
+    }
+
+    input:read-only {
+        cursor: default;
+        background: #fff !important;
+    }
+    input:-moz-read-only {
+        cursor: default;
+        background: #fff !important;
+    }
+    .col-calendar-from,
+    .col-calendar-to {
+        label {
+            line-height: 18px;
+            margin-bottom: 5px;
+        }
+    }
+
+    .col-calendar-from {
+        float: left;
+        width: 302px;
+
+        .box-input-calendar {
+            padding-left: 19px;
+        }
+
+        .select-date {
+            margin-left: 20px;
+        }
+    }
+
+    .col-calendar-to {
+        float: left;
+        width: 272px;
+        margin: 0 0 0 20px;
+    }
+
+    .select-date {
+        width: 272px;
+        padding: 0 0 10px;
+
+        .form-control,
+        .rc-calendar-input {
+            background-image: none;
+
+            &::placeholder {
+                color: #999;
+            }
+        }
+
+        .rc-calendar {
+            margin-top: -37px;
+        }
+
+        .rc-calendar-date-input-wrap {
+            width: 268px;
+        }
+    }
+    .calendar-group {
+        width: 275px;
+        display: none;
+        margin-left: 22px;
+        margin-bottom: 20px;
+
+        label {
+            margin-bottom: 10px;
+        }
+
+        .box-calendar-from,
+        .box-calendar-to {
+            display: none;
+            position: absolute;
+            label {
+                margin-bottom: 10px !important;
+            }
+        }
+    }
+    .rc-calendar-next-year-btn,
+    .rc-calendar-prev-year-btn {
+        display: inline-block;
+    }
+    .rc-calendar-header {
+        .rc-calendar-prev-month-btn {
+            left: 25px;
+        }
+        .rc-calendar-next-month-btn {
+            right: 25px;
+        }
+    }
+}
+
+/* -- end action icon dot dot dot -- */
+.mq-row{
+	.col-details{
+		.box-detail-col{
+			.w-req{
+				width:150px;
+			}
+			.w-buy{
+				width:150px;
+			}
+			.w-dr,.w-dc{
+				width:150px;
+			}
+			// .w-dc{
+			// 	width:75px;
+			// }
+		}
+	}
+}
+
+/* Tablet */
+@media (max-width: 1441px) {
+	.mq-row{
+		.col-details{
+			.box-detail-col{
+				.col-inner{
+	                &.ci-buyer{
+	                    .col1{
+	                        width: 101px;
+	                    }
+	                }
+				}
+				.w-req, .w-buy, .w-dr, .w-dc{
+					width:120px;
+				}
+			}
+
+		}
+	}
+}
+
+@media (max-width: 930px) {
+	.eq-sp-top-search{
+		width:410px;
+		.search-input-bar{
+			width:250px;
+		}
+		.eq-sp-top-dropdown{
+			width:150px;
+		}
+	}
+}
+
+@media (max-width: 736px) {
+
+	.eq-sp-top-search{
+		width:100%;
+		margin-top: 20px;
+		.search-input-bar{
+			width:100%;
+			float:none;
+			margin-right:0;
+		}
+		.eq-sp-top-dropdown{
+			width:100%;
+			float:none;
+			margin-top: 10px;
+		}
+	}
+	.eq-space-top-search{
+	    padding: 0 20px;
+	}
+}
+
+@media (max-width: 768px) {
+  .filter-calendar-eq {
+    width: 100%;
+  }
+}

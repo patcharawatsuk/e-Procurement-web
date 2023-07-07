@@ -1,0 +1,87 @@
+html,
+body {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+ul,
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+label{
+    font-weight: normal;
+}
+
+/* font */
+
+@font-face {
+    font-family: 'Anuyart';
+    src: url('../fonts/oneplanet/subset-Anuyart-Regular.eot');
+    src: url('../fonts/oneplanet/subset-Anuyart-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/oneplanet/subset-Anuyart-Regular.woff2') format('woff2'),
+    url('../fonts/oneplanet/subset-Anuyart-Regular.woff') format('woff'),
+    url('../fonts/oneplanet/subset-Anuyart-Regular.ttf') format('truetype'),
+    url('../fonts/oneplanet/subset-Anuyart-Regular.svg#Anuyart-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AnuyartLight';
+    src: url('../fonts/oneplanet/subset-Anuyart-Light.eot');
+    src: url('../fonts/oneplanet/subset-Anuyart-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/oneplanet/subset-Anuyart-Light.woff2') format('woff2'),
+    url('../fonts/oneplanet/subset-Anuyart-Light.woff') format('woff'),
+    url('../fonts/oneplanet/subset-Anuyart-Light.ttf') format('truetype'),
+    url('../fonts/oneplanet/subset-Anuyart-Light.svg#Anuyart-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* style */
+
+.body-wrap {
+    background: #fff;
+}
+
+.freeze-scroll {
+    overflow: hidden;
+}
+
+.OPC-index{
+    line-height: 1.4;
+}
+
+/* normal class*/
+
+.inner-wrap {
+    width: 1024px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}

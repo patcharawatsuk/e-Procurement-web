@@ -1,0 +1,123 @@
+.bg-white {
+    background-color: #fff;
+    box-shadow: none;
+    border-bottom: 1px solid #e6e8eb;
+    .op-logo {
+        background-image: url('../images/header/logo-supplier-white.svg');
+    }
+    .op-logo.sup {
+        span {
+            color: $color-normal;
+            border-left: 1px solid rgba(88, 101, 117, 0.12);
+        }
+    }
+    .box-dropdown {
+        &.open, &:hover {
+            .nav-format {
+                color: $color-normal!important;
+                background: none!important;
+            }
+        }
+        .nav-format {
+            color: $color-normal;
+            background: none!important;
+        }
+    }
+    .box-dropdown:hover { 
+        background: none!important;
+    }
+    .navbar-toggle { display: none; }
+}
+.fe-sup-regis-container {
+    .sup-content-wrap {
+        width: 985px;
+        margin: 0 auto;
+        padding-top: 60px;
+        padding-bottom: 75px;
+        .sup-content-inner {
+            margin: 40px 0;
+            .heading-title {
+                font-weight: bold;
+            }
+        }
+    }
+    .branchradio {
+        max-width: 100px;
+    }
+}
+.sup-content-title {
+    font-size: 18px;
+    border-bottom: 1px solid #e5e7ed;
+    padding: 10px 0;
+    margin-bottom: 36px;
+}
+
+.sup-section-title {
+    height: 30px;
+    background-color: #F4F5F8;
+    padding: 0 15px;
+    line-height: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #7e8ea4;
+}
+.full-bottom-submit {
+    margin: 0;
+    padding: 20px;
+    border-top: 1px solid #E6E8EB;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 5;
+}
+
+.box-conditions {
+    background-color: #f7f9fa;
+    padding: 16px;
+    .checkbox {
+        margin: 0;
+    }
+    margin-top: 20px;
+    a {
+        color: $color-info;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.modal.supplier-registration {
+    .modal-inner {
+        .modal-scroll {
+            overflow-y: auto;
+            height: 450px;
+            padding-right: 15px;
+        }
+        p {
+            margin-top: 0;
+            span:first-child {
+                float: left;
+                overflow: visible;
+                margin-right: 10px;
+            }
+            span {
+                overflow: hidden;
+                display: block;
+            }
+        }
+        strong {
+            margin-bottom: 1em;
+            display: block;
+        }
+    }
+}
+
+.red-icon {
+    color: $color-red;
+}
+
+.btn-op-disabled {
+    border: none!important;
+}

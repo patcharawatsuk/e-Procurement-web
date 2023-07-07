@@ -1,0 +1,726 @@
+/* form style */
+label {
+    margin: 0 0 10px;
+    padding: 0;
+    font-size: $font-menu;
+    color: $color-title;
+    display: block;
+    font-weight: normal;
+
+    &.vcenter {
+        margin-top: 8px;
+    }
+}
+
+textarea.form-control {
+    resize: none;
+    overflow-x: hidden;
+}
+
+.textarea-approval-note {
+    width: 654px;
+}
+
+.form-bottom {
+    margin: 30px 0;
+}
+
+.form-group {
+    margin: 0 0 20px;
+
+    &.form-group-b30 {
+        margin: 0 0 30px;
+    }
+
+    .font-sub-title {
+        margin-top: 3px;
+        display: inline-block;
+    }
+}
+
+.form-group-inline {
+    margin: 0 0 20px;
+
+    label {
+        display: inline-block;
+        padding-right: 7px;
+        margin: 0;
+        line-height: 34px;
+        vertical-align: top;
+    }
+
+    .form-control {
+        display: inline-block;
+        width: 330px;
+    }
+}
+
+.checkbox,
+.checkbox-inline,
+.radio,
+.radio-inline {
+    color: $color-normal;
+    font-size: $font-normal;
+    padding-left: 20px;
+    line-height: 18px;
+
+    input[type=checkbox] {
+        margin: 2px 0 0 -20px;
+        margin: -1px 0 0 -20px \9;
+
+        &[disabled] {
+            opacity: 0.5;
+        }
+    }
+
+    input[type=radio] {
+        margin: 1px 0 0 -20px;
+    }
+}
+
+// for ie 10 up
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+
+    .checkbox,
+    .checkbox-inline,
+    .radio,
+    .radio-inline {
+        line-height: 22px;
+
+        input[type=radio] {
+            margin: 1px 0 0 -24px;
+        }
+    }
+}
+
+.radio {
+    margin-bottom: 15px;
+
+    &+.radio {
+        margin-top: 0;
+    }
+}
+
+.radio-inline {
+    margin-bottom: 15px;
+    margin-right: 10px;
+    line-height: 18px;
+
+    &+.radio-inline {
+        margin-left: 0;
+    }
+}
+
+.subtitle-radio-inline {
+    color: $color-sub;
+    font-size: $font-subtitle;
+    display: block;
+    margin: 1px 0 10px;
+}
+
+.add-more-input {
+    color: $color-sub  !important;
+    display: inline-block;
+}
+
+.add-radio-inline {
+    color: $color-success;
+
+    &:hover {
+        color: $color-medium-green;
+    }
+
+    &.disabled {
+        color: $color-info-light;
+        cursor: not-allowed;
+    }
+}
+
+.delete-radio-inline {
+    color: $color-info-light;
+    display: inline-block;
+    vertical-align: top;
+
+    &:hover {
+        color: $color-sub;
+    }
+
+    >i {
+        font-size: 20px;
+        margin-top: -4px;
+    }
+}
+
+.input-add-radio {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid $color-border;
+    color: $color-normal;
+    width: 200px;
+    margin: -2px 0 0;
+    vertical-align: middle;
+    font-size: 13px;
+    line-height: 15px;
+    color: $color-normal;
+
+    &:active,
+    &:focus {
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+.form-control {
+    @include border-radius(3px);
+    padding: 6px 15px;
+    height: 34px;
+    font-size: $font-normal;
+    color: $color-normal;
+    background-color: $color-white;
+    background-image: none;
+    border: 1px solid $color-border;
+    outline: 0 !important;
+    box-shadow: none;
+
+    &::-ms-clear {
+        display: none;
+    }
+
+    &.form-hover,
+    &:hover {
+        box-shadow: none;
+        border-color: $color-border-hover;
+    }
+
+    &.form-focus,
+    &:focus {
+        box-shadow: none;
+        border-color: $color-border-focus;
+    }
+
+    &.form-disable,
+    &[disabled] {
+        background-color: $color-bg-disable !important;
+        border-color: $color-border-disable;
+        color: $color-disable;
+    }
+
+    &[disabled]::placeholder {
+        color: $color-disable;
+    }
+
+    &.form-inline {
+        width: auto;
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    &.form-error {
+        border-color: $color-fail;
+        color: $color-fail;
+
+        &:active,
+        &:focus {
+            color: $color-normal;
+        }
+    }
+
+    &.form-error-action {
+        color: $color-normal;
+        border-color: $color-fail;
+    }
+
+    &.input-inline {
+        display: inline-block;
+    }
+
+    /*size*/
+    &.input-xs {
+        width: 80px;
+    }
+}
+
+.label-control {
+    width: auto;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+input[type="password"].form-control {
+    &.form-error {
+        color: $color-normal;
+    }
+}
+
+.form-control[disabled],
+fieldset[disabled] .form-control {
+    &.special-disabled {
+        background-color: $color-bg-disable;
+        border-color: $color-border-disable;
+        color: $color-normal  !important;
+    }
+
+    &.form-error {
+        border-color: $color-fail  !important;
+    }
+}
+
+.box-calendar .form-control,
+select.form-control {
+    -webkit-box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.04) !important;
+    -moz-box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.04) !important;
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.04) !important;
+}
+
+.box-calendar.form-inline {
+    display: inline-block;
+
+    .rc-calendar {
+        position: absolute;
+    }
+}
+
+select.form-control {
+    &.none-active {
+        border-color: $color-border  !important;
+    }
+
+    &.form-error {
+        color: $color-normal;
+    }
+}
+
+.box-calendar {
+    position: relative;
+
+    .box-calendar-pop {
+        display: none;
+    }
+
+    .show-calendar {
+        position: absolute;
+        display: block;
+    }
+
+    .form-control {
+        background-image: url('../images/form/bg_calendar_on.png');
+        background-image: url('../images/form/bg_calendar_on1x.png') \9;
+        background-position: right 10px center;
+        background-repeat: no-repeat;
+        background-size: 20px 18px;
+        padding-right: 35px;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &[readonly] {
+            background-color: $color-white;
+        }
+
+        &[disabled] {
+            background-image: url('../images/form/bg_calendar_off.png');
+            background-image: url('../images/form/bg_calendar_off1x.png') \9;
+
+            &:hover {
+                cursor: not-allowed;
+            }
+        }
+    }
+}
+
+.box-input-search {
+    .form-control {
+        background-image: url('../images/frontend/icon_search_2x.png');
+        background-image: url('../images/frontend/icon_search_1x.png') \9;
+        background-position: right 10px center;
+        background-repeat: no-repeat;
+        background-size: 14px 14px;
+        padding-right: 35px;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &[readonly] {
+            background-color: $color-white;
+        }
+
+        &[disabled] {
+            background-image: url('../images/frontend/icon_search_disabled_2x.png');
+            background-image: url('../images/frontend/icon_search_disabled_1x.png') \9;
+
+            &:hover {
+                cursor: not-allowed;
+            }
+        }
+    }
+}
+
+.box-datepicker {
+    @include border-radius(3px);
+    position: absolute;
+    top: 37px;
+    z-index: 5;
+    width: 272px;
+    height: 258px;
+    border: 1px solid $color-border-light;
+    background: $color-white;
+    box-shadow: 4px 4px 3px 0 rgba(0, 0, 0, 0.04);
+
+    .datepicker-header {
+        padding: 13px 10px;
+        overflow: hidden;
+        border-bottom: 1px solid $color-border-light;
+        text-align: center;
+        position: relative;
+    }
+
+    .ctrl-datepicker-next,
+    .ctrl-datepicker-prev {
+        font-size: 10px;
+        color: $color-datepicker;
+        position: absolute;
+        width: 20px;
+        display: inline-block;
+    }
+
+    .ctrl-datepicker-next {
+        right: 10px;
+    }
+
+    .ctrl-datepicker-prev {
+        left: 10px;
+    }
+
+    .datepicker-calendar {
+        margin: 0 16px;
+        border-collapse: separate;
+        border-spacing: 5px 3px;
+        border: none;
+
+        th {
+            color: $color-sub;
+            font-size: $font-size-xs;
+            padding: 15px 0 5px;
+        }
+
+        td {
+            overflow: hidden;
+            text-align: center;
+            vertical-align: top;
+        }
+    }
+
+    .calendar-date {
+        @include border-radius(13px);
+        color: $color-normal;
+        display: block;
+        margin: 0 auto;
+        width: 26px;
+        line-height: 26px;
+        text-align: center;
+
+        &:hover {
+            background-color: $color-background;
+        }
+
+        &.active {
+            color: $color-white;
+            background-color: $color-border-focus;
+        }
+    }
+
+    .next-month,
+    .prev-month {
+        color: $color-month-ctrl;
+    }
+}
+
+.file-upload-name {
+    @include border-radius(3px);
+    background-color: $color-bg-disable;
+    border: 1px solid $color-border;
+    padding: 6px 15px;
+    margin: 0 5px 0 0;
+    width: 200px;
+    height: 34px;
+    display: inline-block;
+    @extend .ellipsis;
+}
+
+.form-column-title {
+    color: $color-title;
+    font-size: $font-menu;
+    font-weight: bold;
+    border-bottom: 1px solid $color-border;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+
+    .checkbox {
+        margin: 0;
+        width: 200px\9;
+        text-align: right\9;
+    }
+}
+
+.clear-text-input {
+    width: 17px;
+    height: 17px;
+    top: 50%;
+    right: 10px;
+    margin: -8px 0 0;
+    border-radius: 9px;
+    background-color: $color-background;
+    position: absolute;
+    text-align: center;
+    line-height: 16px;
+
+    .icon-cross {
+        font-size: 8px;
+        color: $color-sub;
+        margin-left: 1px;
+    }
+}
+
+.text-form-error {
+    font-size: $font-subtitle;
+    color: $color-fail;
+    display: block;
+    margin-top: 5px;
+    position: relative;
+    padding: 0 0 0 20px;
+
+    .icon-fail, .icon-noti-samll, .icon-noti-small  {
+        position: absolute;
+        left: -3px;
+        top: -1px;
+        font-size: 20px;
+    }
+}
+
+.text-form-error-no-icon {
+    font-size: $font-subtitle;
+    color: $color-fail;
+    display: block;
+    margin-top: 5px;
+    position: relative;
+}
+
+// search input
+
+.search-select {
+    position: relative;
+    outline: none;
+    background: $color-white;
+    font-weight: normal;
+    color: $color-normal;
+    border-radius: 3px;
+
+    * {
+        outline: none;
+    }
+
+    .form-control {
+        background-image: url('../images/frontend/arrow_dd_black.png');
+        background-position: 95% center;
+        background-repeat: no-repeat;
+        background-size: 9px 4px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.box-search {
+    @include border-radius(3px);
+    position: absolute;
+    display: none;
+    z-index: 1;
+    width: 100%;
+    background: $color-white;
+    box-shadow: 0 0 5px rgba(76, 86, 103, .1), 0 5px 25px rgba(31, 37, 50, .15);
+    margin-top: 5px;
+
+    .search-header {
+        padding: 4px;
+        overflow: hidden;
+        border-bottom: 1px solid $color-border-light;
+        text-align: center;
+        position: relative;
+
+        .form-control {
+            background-image: url('../images/frontend/icon_search_1x.png');
+            background-position: 95% center;
+            background-repeat: no-repeat;
+            background-size: 14px 14px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .search-content {
+        width: 100%;
+        padding-top: 10px;
+        min-height: 100px;
+        max-height: 180px;
+        overflow-y: scroll;
+
+        label {
+            margin: 0;
+            cursor: pointer;
+            color: $color-sub;
+            padding: 10px 14px;
+            font-size: $font-normal;
+
+            &.hover,
+            &:hover {
+                color: $color-info;
+                background: $color-background-search;
+            }
+        }
+    }
+}
+
+.loader {
+    height: 4px;
+    width: 100%;
+    top: 60px;
+    position: fixed;
+    overflow: hidden;
+    z-index: 999999999999999;
+}
+
+.loader:before {
+    height: 3px;
+    content: "";
+    left: -200px;
+    width: 200px;
+    display: block;
+    position: absolute;
+    background-color: $color-success;
+    animation: loading .8s linear infinite;
+}
+
+@keyframes loading {
+    from {
+        width: 0%;
+        left: -200px;
+    }
+
+    25% {
+        width: 50%;
+    }
+
+    50% {
+        width: 100%;
+        left: 50%;
+    }
+
+    75% {
+        width: 120%;
+    }
+
+    to {
+        width: 150%;
+        left: 100%;
+    }
+}
+
+
+.btn-inline {
+    float: right;
+    margin-left: 10px;
+}
+
+.input-inline {
+    overflow: hidden;
+
+    &.box-top-search {
+        .input-search {
+            width: 314px;
+        }
+    }
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    line-height: inherit !important;
+    margin: 0;
+	&.w-auto{
+		width: auto;
+	}
+    input {
+        display: none;
+
+        &:checked+.slider {
+            background-color: $color-success;
+        }
+
+        &:focus+.slider {
+            box-shadow: 0 0 1px $color-success;
+        }
+
+        &:checked+.slider:before {
+            @include translate(26px, 0);
+        }
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        width: 50px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        @include border-radius(40px);
+        background-color: $color-border;
+        @include transition(.3s);
+
+        &:before {
+            @include border-radius(40px);
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            background-color: $color-white;
+            @include transition(.3s);
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+            border: solid 1px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .toggle-switch-text {
+        vertical-align: middle;
+        padding-left: 60px;
+        padding-top: 5px;
+        font-size: 13px;
+        color: $color-normal;
+    }
+}
+.group-border{
+	border: 1px solid $color-border;
+	padding: 20px;
+}
+.group-bacground{
+	background-color: #F8F8F8;
+	padding: 20px;
+	table{
+		td{
+			border-color: $color-border !important;
+		}
+	}
+}

@@ -1,0 +1,340 @@
+.access-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #F7F9FA;
+  min-width: 320px;
+  min-height: 650px;
+  padding-bottom: 60px;
+}
+
+.ac-header {
+  margin: 0 30px;
+  padding: 30px 0;
+  overflow: hidden;
+
+  .oneplanet-logo {
+    width: 216px;
+    height: 38px;
+    float: left;
+    background-image: url('../images/access/new_logo_oneplanet2x.png');
+    background-image: url('../images/access/new_logo_oneplanet2x.png') \9;
+    background-repeat: no-repeat;
+    background-size: 216px 38px;
+    &.sup{
+      span{
+        color: #586575;
+        display: inline-block;
+        line-height: 38px;
+        margin-left: 226px;
+        font-size: 20px;
+        border-left: 1px solid #EBECEE;
+        padding-left: 10px;
+      }
+    }
+    img {
+      width: 100%;
+    }
+  }
+
+  .phone-call {
+    font-size: 17px;
+    color: #193F6F;
+    margin: 10px 0;
+    line-height: 19px;
+    float: right;
+
+    a {
+      color: #193F6F;
+    }
+
+    .icon-phone {
+      font-size: 20px;
+      margin-top: -4px;
+    }
+  }
+}
+
+.ac-lang-dropdown{
+  float: right;
+  width: 54px;
+  line-height: 34px;
+  margin-right: 10px;
+  &.open{
+    .box-dropdown-title{
+      background-color: #edf1f4;
+    }
+  }
+  .box-dropdown-title{
+    cursor: pointer;
+    width: 54px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+    &:hover.box-dropdown-title{
+      background-color: #edf1f4;
+    }
+  }
+}
+
+.box-dropdown-list.lang-dropdown-list{
+  margin-top: 5px;
+  li{
+    a{
+      padding: 10px 15px;
+      display: flex;
+      align-items: center;
+    }
+    img{
+      margin-right: 5px;
+    }
+    i{
+      margin-left: auto;
+    }
+  }
+}
+
+.ac-body {
+  width: 450px;
+  margin: 30px auto;
+
+  .access-title {
+    font-size: 30px;
+    line-height: 34px;
+    color: $color-title;
+    font-weight: bold;
+  }
+
+  .access-sub-title {
+    font-size: 18px;
+    color: $color-sub;
+    margin: 0;
+    padding: 10px 0 20px;
+    line-height: 1.3em;
+  }
+}
+
+.access-form {
+  .form-control {
+    height: 50px;
+    line-height: 38px;
+    font-size: 14px;
+  }
+  .box-alert{
+    margin-bottom: 20px;
+  }
+}
+.access-more-info{
+  margin-top: 10px;
+  padding: 30px 0;
+  border-top: 1px solid $color-border;
+  font-size: 17px;
+  color: $color-normal;
+  line-height: 1.3em;
+  a{
+    color: $color-link;
+  }
+}
+
+.ac-footer {
+  width: 100%;
+  padding: 20px 0;
+  position: absolute;
+  bottom: 0;
+  color: $color-sub;
+  border-top: 1px solid #F1F4F7;
+  text-align: center;
+}
+
+.ac-footer-m {
+  width: 100%;
+  padding: 20px 0;
+  position: absolute;
+  bottom: 0;
+  color: $color-sub;
+  border-top: 1px solid #F1F4F7;
+  text-align: center;
+}
+
+.access-button {
+  width: 170px;
+  height: 50px;
+  text-align: center;
+  margin: 10px 0 20px;
+}
+
+.modal-access-text {
+  font-size: 20px;
+  line-height: 1.4em;
+  margin-bottom: 40px;
+}
+
+.forgot-pass-link {
+  color: $color-sub;
+  font-size: 13px;
+  line-height: 1.4em;
+  float: right;
+
+  &:hover {
+    color: $color-info;
+    text-decoration: underline;
+  }
+}
+
+.back-link,
+.back-signin-link {
+  color: $color-title;
+  font-size: 14px;
+  line-height: 1.4em;
+  margin-top: 50px;
+  display: inline-block;
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-info;
+    text-decoration: underline;
+  }
+}
+.back-link-no-line{
+  display: inline-block;
+  height: 50px;
+  text-align: center;
+  margin: 10px 0 20px 20px;
+  padding: 0 10px;
+  color: $color-normal;
+  &:hover {
+    color: $color-info;
+    text-decoration: underline;
+  }
+}
+
+.back-link-normal{
+  color: $color-link;
+  font-size: 14px;
+  line-height: 1.4em;
+  margin-top: 20px;
+  display: inline-block;
+  &:hover {
+    color: $color-info;
+  }
+}
+
+.ac-news,
+.ac-status {
+  background-image: url('../images/access/ic_info2x.png');
+  background-image: url('../images/access/ic_info.png') \9;
+  background-size: 23px 23px;
+  background-position: 30px 17px;
+  background-repeat: no-repeat;
+  color: $color-white;
+  position: relative;
+
+  p {
+    margin: 0 60px 0 65px;
+    padding: 20px 0;
+  }
+
+  .close-news {
+    position: absolute;
+    right: 30px;
+    top: 17px;
+    color: $color-white;
+    font-size: 20px;
+  }
+}
+
+.ac-news {
+  background-color: $color-info;
+}
+
+.ac-status {
+  background-color: $color-success;
+}
+
+.ac-message {
+  text-align: center;
+  padding: 140px 20px;
+  line-height: 1.5em;
+  &.long-content{
+    padding: 100px 20px;
+  }
+  .oneplanet-logo { 
+    width: 284px;
+    height: 50px;
+    margin: 0 auto 40px;
+    background-image: url('../images/access/new_logo_oneplanet_permission.png');
+    background-image: url('../images/access/new_logo_oneplanet_permission.png') \9;
+    background-repeat: no-repeat;
+    background-size: 284px 50px;
+
+    img {
+      width: 100%;
+    }
+  }
+  .n-oneplanet-logo { 
+    width: 216px;
+    height: 38px;
+    margin: 0 auto 40px;
+    background-image: url('../images/access/oneplanet_logo_216x38.png');
+    background-repeat: no-repeat;
+    background-size: 216px 38px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.font-17 {
+  font-size: 17px;
+  line-height: 1.4em;
+}
+
+.ac-message-m{
+  position: absolute;
+  top: 50%;
+  margin-top: -160px;
+  text-align: center;
+  padding: 0 40px;
+  width: 100%;
+}
+@media (max-width: 490px) {
+  .access-wrap {
+    padding: 0;
+    min-height: 100%;
+    height: auto;
+  }
+
+  .ac-header {
+    margin: 0 20px 30px;
+    overflow: hidden;
+
+    .oneplanet-logo {
+      float: none;
+    }
+
+    .phone-call {
+      float: none;
+      margin: 20px 0 0;
+    }
+  }
+
+  .ac-body {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .ac-message {
+    padding: 40px 20px;
+    line-height: 1.4em;
+  }
+
+  .ac-footer {
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+  }
+}

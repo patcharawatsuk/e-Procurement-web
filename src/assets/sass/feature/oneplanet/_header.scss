@@ -1,0 +1,188 @@
+/* section header */
+
+.header-wrap {
+    height: 70px;
+    // overflow: hidden;
+    background: #fff;
+    box-shadow: 1px 1px 1px 0 rgba(0,0,0,.06);
+}
+
+.navbar-fixed-top{
+    animation-name: fadeIn;
+    animation-duration: .5s;
+    -webkit-animation-name: fadeIn; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: .5s; /* Safari 4.0 - 8.0 */
+}
+
+.top-logo {
+    //width: 164px;
+    width: 182px;
+    height: 32px;
+    margin: 19px 0 0 0;
+    background: url(../images/oneplanet/header/logo.png) no-repeat left center;
+    background-size: 100%;
+}
+
+.top-menu-list {
+    padding-top: 18px;
+    li{
+        float: left;
+        .top-line {
+            width: 1px;
+            height: 35px;
+            margin: 0 5px;
+            background: #F2F2F2;
+        }
+        a{
+            color: #333333;
+            margin: 0 15px;
+            font-size: 16px;
+            line-height: 35px;
+            display: inline-block;
+            transition: all .25s ease-out;
+            &:hover, &.active{
+                color: #0070C2;
+                border-bottom: 3px solid #0070C2;
+            }
+            &.contact-sale {
+                width: 155px;
+                color: #0070C2;
+                margin: 0 0 0 25px;
+                text-align: center;
+                border-radius: 18px;
+                border: 1px solid #0070C2;
+                transition: all .25s ease-out;
+                &:focus{
+                    outline: none;
+                }
+                &:hover{
+                    color: #fff;
+                    background: #00B5E2;
+                    border: 1px solid #00B5E2;
+                }
+            }
+            &.contact-sale-blue{
+                width: 155px;
+                height: 38px;
+                color: #ffffff;
+                font-size: 16px;
+                margin: 0 0 0 25px;
+                text-align: center;
+                background: #00B5E2;
+                border-radius: 18px;
+                border: 1px solid #00B5E2;
+                transition: all .25s ease-out;
+                &:focus{
+                    outline: none;
+                }
+                &:hover{
+                    color: #0070C2;
+                    background: #fff;
+                    border: 1px solid #0070C2;
+                }
+            }
+        }
+    }
+}
+
+.hum-menu {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .inner-wrap {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 736px) {
+    .freeze-scroll{
+        height:100%;
+        .inner-wrap{
+            position:static;
+        }
+    }
+    .hum-menu {
+        float: left;
+        display: block;
+        font-size: 16px;
+        margin: 28px 0 0 10px;
+        .navbar-op{
+            margin: 0;
+            padding: 0;
+            float:left;
+            border-radius: 4px;
+            background-image: none;
+            background-color: transparent;
+            display:block;
+            .icon-bar{
+                width: 16px;
+                height: 2px;
+                background: #000;
+                border-radius: 1px;
+            }
+        }
+        &.hum-menu-open{
+            .hum-m-menu{
+                opacity: 1;
+                height:100%;
+            }
+            .hum-m-overflow{
+                height:100%;
+            }
+        }
+    }
+    .hum-m-menu,.hum-m-overflow{
+        top: 70px;
+        width:100%;
+        height:0;
+        position:fixed;
+    }
+    .hum-m-menu {
+        opacity: 0;
+        left: 0;
+        z-index: 1000;
+        transition-property: all;
+        transition-duration: .5s;
+        transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+        li{
+            background: #fff;
+            border-top: 1px solid #DFDFDF;
+            a{
+                width: 100%;
+                color: #333333;
+                display: block;
+                padding: 15px 50px;
+            }
+        }
+    }
+    .hum-m-overflow {
+        left: 0;
+        opacity: .5;
+        z-index: 999;
+        background: #000;
+        transition: height 0.5s;
+    }
+    .top-logo {
+        margin: 19px 0 0 43px;
+    }
+    .inner-wrap{
+        .pull-left{
+            width: 60%;
+        }
+        .top-menu-list{
+            >li{
+                display: none;
+                &.sign-in {
+                    display: list-item;
+                    .box-dropdown {
+                        li {
+                            display: block!important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

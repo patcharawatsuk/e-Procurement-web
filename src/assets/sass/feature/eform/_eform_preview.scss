@@ -1,0 +1,216 @@
+.preview-wrap{
+    //position: fixed;
+    //height: 100%;
+    width: 100%;
+    // left: 0;
+    // top: 0;
+    // z-index: 99;
+    //overflow: hidden;
+    background: $color-white;
+    //padding: 0 0 114px;
+}
+// head
+.preview-head{
+    //position: relative;
+    &.sticky{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 9;
+        .qtn-preview-detail{
+            max-height: 0;
+        }
+    }
+    .haed-inner{
+        padding: 40px;
+        background-color: $color-background;
+        border-bottom: 1px solid $color-border;
+    }
+    .form-dropdown-list{
+        left: unset;
+        right: 0;
+    }
+    .qtn-preview-name{
+        color: $color-title;
+        font-size: 30px;
+        line-height: 36px;
+        font-weight: bold;
+        float: left;
+        margin: 0 20px 0 0;
+    }
+    .qtn-version{
+        float: left;
+        margin-top: 15px;
+    }
+    .qtn-preview-detail{
+        max-height: 200px;
+        transition: max-height 0.1s;
+        overflow: hidden;
+        p{
+            padding: 10px 0 0;
+            margin: 0;
+        }
+    }
+}
+
+.box-format-wrap{
+    width: 222px;
+    height: 45px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px $color-border;
+    background-color: $color-white;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 12px 15px;
+    line-height: 20px;
+    overflow: hidden;
+    .format-text{
+        float: left;
+    }
+    a{
+        float: left;
+        color: $color-normal;
+        margin-left: 10px;
+        &:hover{
+            color: $color-sub;
+        }
+        &.active{
+            color: $color-info;
+        }
+        i{
+            position: relative;
+            top: -2px;
+        }
+    }
+}
+.box-alert-preview{
+    margin: 0;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+}
+.preview-bar{
+    padding: 0 40px;
+    position: relative;
+    background-color: $color-white;
+}
+.preview-progress{
+    position: absolute;
+    background-color: $color-info-light;
+    z-index: 2;
+    width: calc(100% - 80px);
+    height: 5px;
+    .progress-bar{
+        background-color: $color-info;
+        height: 5px;
+    }
+}
+.preview-count{
+    padding-top: 10px;
+    margin: 0 0 40px;
+    font-size: $font-subtitle;
+    color: $color-sub;
+}
+// bottom
+.preview-bottom{
+    margin: 0;
+    padding: 0 40px 40px;
+    overflow: hidden;
+    //position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 5;
+}
+// content
+.preview-content{
+    padding: 0 40px;
+}
+
+.preview-box-section{
+    margin-bottom: 40px;
+    .main-title{
+        color: $color-title;
+        font-size: $font-heading;
+        font-weight: bold;
+    }
+    .title{
+        color: $color-title;
+        font-size: $font-menu;
+        font-weight: bold;
+    }
+    .sub-title{
+        margin-top: 10px;
+    }
+    .box-date{
+        float: left;
+        width: 274px;
+        margin-right: 20px;
+    }
+    .box-time{
+        float: left;
+    }
+}
+.preview-sub-section{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: $color-background;
+    .preview-box-section:last-child{
+        margin-bottom: 0;
+    }
+}
+.preview-table-grid{
+    width: 100%;
+    color: $color-white;
+    border: none;
+    border-collapse: collapse;
+    &.table-grid-border{
+        border: 1px solid $color-border;
+    }
+    .bg-white{
+        background-color: $color-white;
+        color: $color-normal;
+    }
+    .rowspace{
+        th,td{
+            height: 10px;
+        }
+    }
+    th,td{
+        height: 36px;
+    }
+    th{
+        color: $color-title;
+        font-size: $font-normal;
+        border-bottom: 1px solid $color-border;
+        padding: 10px;
+    }
+    td{
+        padding: 0 10px;
+    }
+}
+.radio-preview,
+.checkbox-preview{
+    margin: 0;
+    input{
+            margin: 4px 0 0 -6px !important;
+    }
+}
+.row-form-inline{
+    margin-top: 10px;
+    overflow: hidden;
+    .col-1{
+        float: left;
+        width: 274px;
+        margin-right: 20px;
+        line-height: 34px;
+        @extend .ellipsis;
+    }
+    .col-2{
+        float: left;
+        width: calc(100% - 294px);
+    }
+}

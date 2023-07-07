@@ -1,0 +1,199 @@
+.view-title-page{
+    padding: 20px 0;
+    overflow: hidden;
+    .title-info{
+        .title-text{
+            font-size: $font-heading;
+            color: $color-title;
+            font-weight: bold;
+            line-height: 20px;
+        }
+        .title-number{
+            margin-top: 10px;
+        }
+    }
+}
+.view-info-bar{
+    background-color: $color-background;
+    border: 1px solid $color-border;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    overflow: hidden;
+    .box-info{
+        float: left;
+        width: 160px;
+        padding: 20px 0;
+        margin-right: 20px;
+        &.box-min{
+            width: 120px;
+            padding: 0 0 20px;
+            &.left-line{
+                width: 140px;
+            }
+        }
+        &.left-line{
+            border-left: 1px solid $color-border;
+            padding-left: 20px;
+        }
+        .title-box{
+            margin-bottom: 10px;
+            color: $color-sub;
+        }
+        .detail-box{
+            color: $color-normal;
+            &.highlight{
+                color: $color-info;
+                font-size: $font-heading;
+            }
+        }
+    }
+}
+.inline-block{
+    display: inline-block!important;
+}
+.view-filter{
+    margin-bottom: 20px;
+    line-height: 34px;
+    .box-dropdown,.dd-view-filter{
+        width: 295px;
+    }
+    .box-dropdown-title>i{
+        top: 6px;
+    }
+}
+.box-dropdown-list.dd-view-filter{
+    max-height: 276px;
+    li{
+        &.all{
+            padding-bottom: 5px;
+            border-bottom: 1px solid $color-border;
+        }
+        label.checkbox{
+            display: block;
+            padding: 10px 20px 10px 40px;
+            margin: 0;
+            line-height: 1.43em;
+            font-size: $font-normal;
+            white-space: nowrap;
+            color: $color-sub;
+            @extend .ellipsis;
+      
+            &:hover {
+                background-color: $dropdown-bg-hover;
+                color: $dropdown-text-hover;
+            }
+        }
+        &.selected {
+            label.checkbox{
+                background-color: $dropdown-bg-hover;
+                  color: $dropdown-text-hover;
+            }
+        }
+    }
+}
+.table-sticky-wrap{
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+    .table-scroll{
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        overflow-x: auto;
+        overflow-y: hidden;
+        border: 1px solid $color-border;
+        &.border-right{
+            border-top: none;
+            border-left: none;
+            border-bottom: none;
+            border-right: 1px solid $color-border;
+        }
+    }
+}
+//table fix default
+.main-table{
+    min-width: 100%;
+    border-collapse: collapse;
+    tbody > tr {
+
+        &.row-bg{
+            td{
+                background-color: $color-background;
+            }
+        }
+        &:hover{
+            td{
+                background-color: $color-background-search;
+            }
+        }
+
+        th,td{
+            &:last-child{
+                border-right: none;
+            }
+        }
+    }
+    th,td{
+        background-color: $color-white;
+        border: 1px solid $color-border;
+        width: 240px;
+        min-width: 240px;
+        max-width: 240px;
+        text-align: left;
+        vertical-align: top;
+        padding: 10px;
+        &:last-child{
+            border-right: none;
+        }
+    }
+    .fixed-first{
+        box-shadow: 2px 0 4px 0 rgba(59, 68, 79, 0.1);
+        position: sticky;
+        left: 0;
+        z-index: 2;
+    }
+}
+.wrap-word{
+    @extend .ellipsis;
+}
+.p-detail{
+    p{
+        margin: 0 0 10px;
+        padding: 0;
+    }
+}
+.rc-head{
+    margin-bottom: 40px;
+    overflow: hidden;
+    .rc-left{
+        float: left;
+        width: calc(100% - 190px);
+    }
+    .rc-right{
+        float: right;
+        width: 180px;
+    }
+}
+.bottom-total-score{
+    background-color: $color-background-cal;
+    padding: 10px 25px;
+    overflow: hidden;
+    display: flex;
+    text-align: right;
+    align-items: center;
+    margin-bottom: 20px;
+    .passing-score{
+        width: calc(100% - 165px);
+        .passing-text{
+            margin-top: 5px;
+            font-size: $font-subtitle;
+            color: $color-sub;
+        }
+    }
+    .total-score{
+        width: 130px;
+        margin-left: 35px;
+        color: $color-info;
+        font-size: $font-heading;
+    }
+}

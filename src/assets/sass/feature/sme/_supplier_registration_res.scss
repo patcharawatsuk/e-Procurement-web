@@ -1,0 +1,55 @@
+@media (max-width: 1025px) {
+    .fe-sup-regis-container {
+        .sup-content-wrap {
+            width: 100%;
+            padding: 60px 20px;
+        }
+        .column-mm-full {
+            margin-left: 1.95%!important;
+            padding-right: 1.95%!important;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .fe-sup-regis-container {
+        .branchradio {
+            max-width: 150px;
+        }
+    }
+}
+@media (max-width: 736px) {
+    .fe-sup-regis-container {
+        .column-mm-full {
+            margin-left: 0!important;
+            padding-right: 0!important;
+        }
+        .sup-content-inner {
+            .box-row {
+                width: 100%;
+                margin: 0;
+            }
+            .box-row>[class*="column-"]:first-child, .box-row>[class^=column-]:first-child {
+                margin-left: 0;
+            }
+            .box-row > [class^="column-"], .box-row > [class*=" column-"] {
+                margin-left: 3.9%;
+            }
+        }
+    }
+    .full-bottom-submit {
+        .pull-right {
+            width: 100%;
+            .btn-op-primary {
+                width: 100%;
+            }
+        }
+    }
+}
+@media (max-width: 414px) {
+    .bg-white {
+        .op-logo {
+            margin-left: 15px;
+        }
+    }
+}

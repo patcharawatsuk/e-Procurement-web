@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  # Next.js app
+  web:
+    build: .
+    command: npm run start
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+
+  # Nginx reverse proxy
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"

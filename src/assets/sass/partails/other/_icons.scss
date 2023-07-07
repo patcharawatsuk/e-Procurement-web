@@ -1,0 +1,354 @@
+/*hack icomoon*/
+[class*=" icon-"],
+[class^="icon-"] {
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.icon-mobile {
+  @extend .icon-phone;
+}
+
+.icon-calendar2 {
+  @extend .icon-calendar;
+}
+
+.icon-edit-note {
+  @extend .icon-edit;
+}
+
+.icon-process {
+  @extend .icon-menu-purchasing;
+}
+
+.icon-approve {
+  @extend .icon-menu-approve;
+}
+
+.icon-overview {
+  @extend .icon-menu-over-view;
+}
+
+.icon-arrow-right {
+  @extend .icon-arrow-menu-default;
+}
+
+.icon-back {
+  @extend .icon-arrow-menu-back;
+}
+
+.icon-arrow-down {
+  @extend .icon-arrow-menu-active;
+}
+
+.icon-budget-2{
+  @extend .icon-menu-budget;
+}
+
+.icon-noti-small{
+  @extend .icon-noti-samll;
+}
+
+// .icon-template-2:before {
+//   @extend .icon-workflow-2;
+// }
+
+.icon-dot {
+  font-size: 8px;
+  vertical-align: middle;
+  display: inline-block;
+  margin: -2px 5px 0 0;
+}
+
+.icon-action-dot {
+  font-size: 18px;
+}
+
+.icon-plus-circle-2 {
+  //margin-top: -2px;
+  font-size: 17px;
+  margin-right: 5px;
+}
+
+[class*=" icon-flag-"],
+[class^="icon-flag-"] {
+  width: 25px;
+  height: 15px;
+  background-size: 100%;
+  display: inline-block \9;
+}
+
+.icon-flag-th {
+  background-image: url("../images/flags/flag_th.png");
+  background-image: url("../images/flags/1x/flag_th.png") \9;
+}
+
+.icon-flag-us {
+  background-image: url("../images/flags/flag_us.png");
+  background-image: url("../images/flags/1x/flag_us.png") \9;
+}
+/* buttons */
+[class*=" icon-btn-"],
+[class^="icon-btn-"] {
+  background-size: 100%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.icon-btn-excel-white {
+  width: 22px;
+  height: 20px;
+  background-image: url("../images/buttons/excel_white.png");
+  background-image: url("../images/buttons/1x/excel_white.png") \9;
+}
+
+.icon-btn-excel-grey {
+  width: 22px;
+  height: 20px;
+  margin-top: -2px;
+  background-image: url("../images/buttons/excel_grey.png");
+  background-image: url("../images/buttons/1x/excel_grey.png") \9;
+}
+
+.icon-btn-import {
+  width: 19px;
+  height: 22px;
+  background-image: url("../images/buttons/import_excel.png");
+  background-image: url("../images/buttons/1x/import_excel.png") \9;
+}
+
+.icon-btn-img {
+  width: 18px;
+  height: 21px;
+  background-image: url("../images/buttons/add_image.png");
+  background-image: url("../images/buttons/1x/add_image.png") \9;
+}
+
+.icon-table-img,
+.icon-table-no-img {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.icon-table-img {
+  //background-image: url("../images/backend/default_image_14x14.png");
+}
+
+.icon-table-no-img {
+  //background-image: url("../images/backend/no_image_14x14.png");
+}
+
+.icon-clear-input {
+  background-image: url("../images/form/icon_input_delete2x.png");
+  background-image: url("../images/form/icon_input_delete.png") \9;
+  background-size: 18px 17px;
+  width: 18px;
+  height: 17px;
+  margin: 0 0 0 10px;
+}
+
+.noti-green {
+  @extend [class*=" icon-"];
+  position: absolute;
+  color: #77D042;
+  font-size: 8px;
+
+  &:before {
+    @extend .icon-dot;
+  }
+}
+
+.noti-fail {
+  @extend [class*=" icon-"];
+  position: absolute;
+  color: #d82c22;
+  font-size: 8px;
+
+  &:before {
+    @extend .icon-dot;
+  }
+}
+
+.noti-yellow {
+  @extend [class*=" icon-"];
+  position: absolute;
+  color: #F7B735;
+  font-size: 8px;
+
+  &:before {
+    @extend .icon-dot;
+  }
+}
+
+.icon-add-blue {
+  background-image: url("../images/frontend/icon_plus2x.png");
+  background-image: url("../images/frontend/icon_plus1x.png") \9;
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.icon-add-outline-blue {
+  color: #009EFB;
+  &:before{
+    @extend .icon-plus-circle;
+  }
+}
+
+.icon-clock-grey {
+  background-image: url("../images/frontend/icon_clock2x.png");
+  background-image: url("../images/frontend/icon_clock1x.png") \9;
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.icon-check-green {
+  background-image: url("../images/frontend/icon_check_green2x.png");
+  background-image: url("../images/frontend/icon_check_green1x.png") \9;
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.icon-awaiting-img {
+  background-image: url("../images/frontend/icon_awaiting_img2x.png");
+  background-image: url("../images/frontend/icon_awaiting_img1x.png") \9;
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.icon-reject-img {
+  background-image: url("../images/frontend/icon_reject_img2x.png");
+  background-image: url("../images/frontend/icon_reject_img1x.png") \9;
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.icon-stop-img {
+  background-image: url("../images/frontend/icon_stop_img2x.png");
+  background-image: url("../images/frontend/icon_stop_img1x.png") \9;
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.icon-forwarded-img {
+  background-image: url("../images/frontend/forwarded.svg");
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+[class*=" icon-radius-"],
+[class^="icon-radius-"] {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.icon-radius-gray{
+  background-color: #C4CCD6;
+}
+
+.icon-radius-awaiting{
+  background-color: #F7B735;
+}
+
+.icon-locked {
+  background: url("../images/frontend/icon_locked.png") no-repeat;
+  width: 25px;
+  height: 25px;
+  background-size: 100%;
+  font-size: 18px;
+}
+
+.icons-inline {
+  white-space: nowrap;
+  display: inline;
+  i {
+    margin-top: -5px;
+  }
+}
+
+.icon-new-update {
+  margin-left: -5px;
+  margin-top: -12px!important;
+  color: #F7B735;
+}
+
+.icon-close-invoice{
+  @extend .icon-close-remaining;
+}
+
+.icon-new-invoice{
+  @extend .icon-document-add;
+}
+
+.icon-contact-info {
+  width: 20px;
+  height: 20px;
+  margin-top: -2px;
+  margin-right: 10px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url(../images/eq/contact_info.png);
+}
+
+.icon-dot{
+  &.dot-l{
+    font-size: 10px;
+  }
+}
+
+a{
+  .icon-reopen{
+    .path3:before,.path4:before {
+      color: rgb(88, 101, 117);
+    }
+  }
+  &:hover{
+    .icon-reopen{
+      .path3:before,.path4:before {
+        color: rgb(41, 124, 187);
+      }
+    }
+  }
+}
+.icon-arrow-left-1 {
+  @extend .icon-more;
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+.icon-arrow-right-1 {
+  @extend .icon-more;
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.icon-arrow-up-1 {
+  @extend .icon-more;
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.icon-arrow-down-1 {
+  @extend .icon-more;
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.icon-2x{
+  font-size: 40px;
+}

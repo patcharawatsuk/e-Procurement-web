@@ -1,0 +1,319 @@
+.tooltip {
+    position: relative;
+    display: inline-block;
+    &:hover .tooltiptext {
+        display: block;
+        opacity: 1;
+    }
+
+    &.arrow-right {
+        .tooltip-right {
+            top: -5px;
+            right: 150%;
+            margin-left: -40px;
+            text-align: left;
+            width: 180px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: -75px;
+            line-height: 1.5em;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 10px;
+                right: -10px;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: transparent transparent transparent $color-title;
+            }
+        }
+        [class^="icon-"] {
+            margin-top: -3px;
+            margin-left: 5px;
+            &.awaiting {
+                color: $color-warning;
+            }
+        }
+    }
+
+    .tooltiptext {
+        display: none;
+        position: absolute;
+        width: 75px;
+        background-color: $color-title;
+        color: $color-white;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 3px;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.6s;
+        font-size: 11px !important;
+        font-family: arial,sans-serif;
+    }
+
+    .tooltip-top {
+        bottom: 150%;
+        left: 50%;
+        margin-left: -40px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: $color-title transparent transparent transparent;
+        }
+    }
+}
+/* new tooltip */
+.inv-inline { white-space: nowrap; }
+.op-tooltip {
+    position: relative;
+
+    i.icon-info{
+        margin-top: -3px;
+        margin-left: 4px;
+    }
+    i.icon-tax-invoice {
+        background-image: url('../images/frontend/icon_tax_invoice_2x.png');
+        background-size: 20px 20px;
+        width: 20px;
+        height: 20px;
+        margin-top: -3px;
+        margin-left: 4px;
+      }
+}
+
+.op-tooltip:hover .op-tooltip-text {
+    display: block;
+}
+
+.op-tooltip-text {
+    font-family: $font-family;
+    display: none;
+    position: absolute;
+    //bottom: 30px;
+    text-align: center;
+    background-color: $color-title;
+    color: $color-white;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 11px;
+    padding: 7px;
+
+    &.left {
+        left: 0;
+    }
+
+    &.center {
+        left: 50%;
+    }
+
+    &.right {
+        right: -10px;
+    }
+}
+
+.op-tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: $color-title transparent transparent transparent;
+}
+
+.op-tooltip-text.left::after {
+    left: 15px;
+}
+
+.op-tooltip-text.center::after {
+    left: 50%;
+}
+
+.op-tooltip-text.right::after {
+    right: 15px;
+}
+
+.lock-invoice-tooltip {
+    position: absolute;
+
+    i.icon-locked {
+        background: url('../images/frontend/icon_locked.png') no-repeat;
+        width: 25px;
+        height: 25px;
+        background-size: 100%;
+        font-size: 18px;
+      }
+}
+
+.lock-invoice-tooltip:hover .lock-invoice-tooltip-text {
+    display: block;
+}
+
+.lock-invoice-tooltip-text {
+    font-family: $font-family;
+    display: none;
+    position: absolute;
+    bottom: 35px;
+    text-align: center;
+    background-color: $color-title;
+    color: $color-white;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 11px;
+    padding: 7px;
+    width: 200px;
+    left: -168px;
+
+    &.left {
+        left: 0;
+    }
+
+    &.center {
+        left: 50%;
+    }
+
+    &.right {
+        right: -10px;
+    }
+}
+
+.lock-invoice-tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: $color-title transparent transparent transparent;
+}
+
+.lock-invoice-tooltip-text.left::after {
+    left: 15px;
+}
+
+.lock-invoice-tooltip-text.center::after {
+    left: 50%;
+}
+
+.lock-invoice-tooltip-text.right::after {
+    right: 15px;
+}
+
+// tooltip has sub tiltle //
+
+.tooltip-sub{
+    display: none;
+    position: absolute;
+    border-radius: 2px;
+    background-color: $color-title;
+    padding: 5px;
+    line-height: 15px;
+    font-size: $font-normal;
+    width: auto;
+    left: 11px;
+    top: 0;
+    z-index: 1000;
+    &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+    }
+    &.arr-left{
+        &:after {
+            top: 50%;
+            left: -5px;
+            margin-top: -4px;
+            border-width: 4px 5px 4px 0;
+            border-style: solid;
+            border-color: transparent $color-title transparent transparent;
+        }
+    }
+    &.arr-right{
+        &:after {
+            top: 50%;
+            right: -5px;
+            margin-top: -4px;
+            border-width: 4px 0 4px 5px;
+            border-style: solid;
+            border-color: transparent transparent transparent $color-title;
+        }
+    }
+    &.arr-top{
+        &:after {
+            top: -4px;
+            left: 50%;
+            margin-left: -4px;
+            border-width: 0 4px 4px 4px;
+            border-style: solid;
+            border-color: transparent transparent $color-title transparent;
+        }
+    }
+    &.arr-bottom{
+        &:after {
+            top: 100%;
+            left: 50%;
+            margin-left: -4px;
+            border-width: 4px 4px 0 4px;
+            border-style: solid;
+            border-color: $color-title transparent transparent transparent;
+        }
+    }
+    &.arr-bottom-left{
+        &:after {
+            top: 100%;
+            left: 15px;
+            margin-left: -4px;
+            border-width: 4px 4px 0 4px;
+            border-style: solid;
+            border-color: $color-title transparent transparent transparent;
+        }
+        .title{
+            color: $color-white;
+            white-space: normal;
+            max-width: 300px;
+        }
+    }
+    &.arr-top-left{
+        &:after {
+            top: -4px;
+            left: 5px;
+            margin-left: -4px;
+            border-width: 0 4px 4px 4px;
+            border-style: solid;
+            border-color: transparent transparent $color-title transparent;
+        }
+    }
+    &.arr-top-right{
+        &:after {
+            top: -4px;
+            right: 5px;
+            margin-left: -4px;
+            border-width: 0 4px 4px 4px;
+            border-style: solid;
+            border-color: transparent transparent $color-title transparent;
+        }
+    }
+    .title{
+        color: $color-white;
+        white-space: nowrap;
+        &.title-nowrap {
+            color: $color-white;
+            white-space: normal;
+            word-break: break-word;
+        }
+    }
+    .subtitle{
+        padding-top: 5px;
+        color: $color-sub;
+        font-size: $font-size-xs;
+        max-width: 300px;
+    }
+}
