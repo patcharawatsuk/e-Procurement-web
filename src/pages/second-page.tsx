@@ -8,11 +8,11 @@ export default function SecondPage() {
   const authState = useSelector(selectAuthState);
 
   return (
-    <DefaultLayout>
+    <>
       <div>
         {' '}
         <div>{authState ? 'Logged in' : 'Not Logged In'}</div>
       </div>
-    </DefaultLayout>
+    </>
   );
 }

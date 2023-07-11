@@ -15,10 +15,11 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./*"],
       "@axios": ["./src/api/axios.ts"],
       "@store/*": ["./src/store/*"],
       "@api/*": ["./src/api/*"],
+      "@defaultLayout": ["./src/layouts/DefaultLayout.tsx"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

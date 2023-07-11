@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ParentPurchasingGroup from '@/components/role/subcomponents/ParentPurchasingGroup';
+import ParentPurchasingGroup from '@/src/components/role/subcomponents/ParentPurchasingGroup';
 import { FormInstance, Form } from 'antd';
 
 interface Props {

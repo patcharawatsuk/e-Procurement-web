@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import AccountAssignment from '@/components/role/subcomponents/AccountAssignment';
+import AccountAssignment from '@/src/components/role/subcomponents/AccountAssignment';
 import { FormInstance, Form } from 'antd';
 
 interface Props {

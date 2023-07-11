@@ -37,7 +37,7 @@ export default function BasicTable() {
     setPage(newPage);
   };
   return (
-    <DefaultLayout>
+    <>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
@@ -77,6 +77,6 @@ export default function BasicTable() {
           rowsPerPageOptions={[]}
         />
       </TableContainer>
-    </DefaultLayout>
+    </>
   );
 }

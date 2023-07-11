@@ -10,7 +10,7 @@ const Login: NextPage = () => {
   const dispatch = useDispatch();
 
   return (
-    <DefaultLayout>
+    <>
       <div
         style={{
           display: 'grid',
@@ -31,7 +31,7 @@ const Login: NextPage = () => {
           {authState ? 'Logout' : 'LogIn'}
         </button>
       </div>
-    </DefaultLayout>
+    </>
   );
 };
 
