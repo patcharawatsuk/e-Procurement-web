@@ -42,8 +42,30 @@ const Product : React.FC<Props> = ({form}) => {
     }
   }
 
+  async function fetchData2() {
+    debugger
+    const apiUrl = 'http://localhost:8080/api/order/';
+    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb251dEBnbWFpbC5jb20iLCJpYXQiOjE2ODkxMTA2MTgsImV4cCI6MTY4OTExNDIxOH0._PJFswcmwe9HJo8pDkjEK_ROVQHDXiJRfNDMINyu4MA';
+    try {
+      await axios.post(`${apiUrl}`, {},{
+        headers: {
+          'Authorization': 'Bearer ' + token,
+          'Content-Type': 'application/json'
+        }
+      }).then(res => {
+        debugger
+        console.log(res.data);
+      }).catch(err => {
+        throw new Error(err)
+      })
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   useEffect(() => {
     fetchData();
+    fetchData2();
   }, []);
 
   const addCart = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -122,9 +144,9 @@ const Product : React.FC<Props> = ({form}) => {
                 <h2 className={styles.title}>{(e.price * 35.14).toLocaleString(undefined, { maximumFractionDigits: 0 })}</h2>
                 <Image preview={false} src={e.thumbnail} alt={e.title} width={250} height={250} />
                 <div className={styles.buttonContainer}>
-                  <Button item-id={e.id} danger onClick={(e) => handleRemoveItem(e as React.MouseEvent<HTMLButtonElement, MouseEvent>)}>-</Button>
-                  <Button item-id={e.id} type="dashed" onClick={(e) => handleViewDetail(e as React.MouseEvent<HTMLButtonElement, MouseEvent>)}>Detail</Button>
-                  <Button item-id={e.id} style={{ borderColor: "#00bd01", color: "#00bd01" }} onClick={(e) => handleAddItem(e as React.MouseEvent<HTMLButtonElement, MouseEvent>)}>+</Button>
+                  <Button item-id={e.id} style={{ marginRight: '10px'}} danger onClick={(e) => handleRemoveItem(e as React.MouseEvent<HTMLButtonElement, MouseEvent>)}>-</Button>
+                  <Button item-id={e.id} style={{ marginRight: '10px', borderColor: '#1c5cbd', color: '#1c5cbd' }} onClick={(e) => handleViewDetail(e as React.MouseEvent<HTMLButtonElement, MouseEvent>)}>Detail</Button>
+                  <Button item-id={e.id} style={{ borderColor: '#00bd01', color: '#00bd01' }} onClick={(e) => handleAddItem(e as React.MouseEvent<HTMLButtonElement, MouseEvent>)}>+</Button>
                 </div>
                 </Badge>
               </div>

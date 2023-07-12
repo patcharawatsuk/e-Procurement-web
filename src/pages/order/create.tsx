@@ -14,7 +14,7 @@ const CreateOrder: React.FC = () => {
       return {
         productId: e.id,
         qty: e.qty,
-        price: (e.price * 35.14).toFixed(0)
+        price: Number((e.price * 35.14).toFixed(0))
       }
     })
     console.log(order);

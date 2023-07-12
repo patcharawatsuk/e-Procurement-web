@@ -5,6 +5,7 @@ import { Dropdown, Space } from 'antd';
 import { selectAuthState, setAuthState } from '@store/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import Link from 'next/link';
+import { selectIsOpenSignIn, setOpenSignIn } from '../store/signinSlice';
 
 function ResponsiveAppBar() {
   const authState = useSelector(selectAuthState);
@@ -34,7 +35,8 @@ function ResponsiveAppBar() {
       label: <span className="color-sub">Sign Out</span>,
       key: '2',
       onClick: () => {
-        dispatch(setAuthState(false))
+        dispatch(setAuthState(false));
+        dispatch(setOpenSignIn(false));
       }
     },
   ];
@@ -44,7 +46,8 @@ function ResponsiveAppBar() {
       label: <span className="color-sub">Sign In</span>,
       key: '0',
       onClick: () => {
-        dispatch(setAuthState(true))
+        //dispatch(setAuthState(true))
+        dispatch(setOpenSignIn(true));
       }
     },
     {

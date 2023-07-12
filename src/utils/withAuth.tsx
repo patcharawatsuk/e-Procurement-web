@@ -11,6 +11,7 @@ function withAuth(Component: any) {
     const isAuthenticated = useSelector(selectAuthState);
     if (!isAuthenticated && currentUrl !== '/') {
       router.push('/');
+      return <></>
     } else {
       return isAuthenticated ? <Component {...props} /> : <UnAuthApp/>;
     }

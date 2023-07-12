@@ -6,6 +6,7 @@ import {
 } from '@reduxjs/toolkit';
 import { authSlice } from './authSlice';
 import { loadingSlice } from './loadingSlice';
+import { openSignInSlice } from './signinSlice';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import logger from 'redux-logger';
@@ -16,6 +17,7 @@ import { useDispatch, useSelector } from 'react-redux';
 const rootReducer = combineReducers({
   [authSlice.name]: authSlice.reducer,
   [loadingSlice.name]: loadingSlice.reducer,
+  [openSignInSlice.name]: openSignInSlice.reducer,
 });
 
 const makeConfiguredStore = () =>
