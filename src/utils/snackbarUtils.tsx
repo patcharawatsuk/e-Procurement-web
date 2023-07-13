@@ -4,7 +4,7 @@ import { useSnackbar, VariantType } from 'notistack';
 
 let useSnackbarRef:
   | {
-      enqueueSnackbar: (msg: string, options: { variant: VariantType }) => void;
+      enqueueSnackbar: (msg: string, options: { variant: VariantType, autoHideDuration?: number}) => void;
     }
   | null = null;
 
@@ -15,7 +15,7 @@ export const SnackbarUtilsConfigurator: React.FC = () => {
 
 const toast = (msg: string, variant: VariantType = 'default') => {
   if (useSnackbarRef) {
-    useSnackbarRef.enqueueSnackbar(msg, { variant });
+    useSnackbarRef.enqueueSnackbar(msg, { variant, autoHideDuration: 5000 });
   } else {
     console.error('useSnackbarRef is not initialized');
   }

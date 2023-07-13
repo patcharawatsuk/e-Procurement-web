@@ -44,7 +44,7 @@ export const makeStore = () => {
     const store: any = configureStore({
       reducer: persistedReducer,
       middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(logger).concat(axiosMiddleware),
+        getDefaultMiddleware().concat().concat(axiosMiddleware),
       devTools: process.env.NODE_ENV !== 'production',
     });
 

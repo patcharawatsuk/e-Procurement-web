@@ -1,11 +1,10 @@
 import axios from '@axios';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsSignInOpen, setSignInOpen } from '@store/formOpenSlice';
+import { setSignInOpen } from '@store/formOpenSlice';
 import { setAuthState } from '@store/authSlice';
 import { useRouter } from 'next/router';
 
 const useAxiosAuth = () => {
-  const isOpenSignIn = useSelector(selectIsSignInOpen);
   const dispatch = useDispatch();
   const router = useRouter();
 

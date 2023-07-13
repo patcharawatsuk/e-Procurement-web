@@ -5,6 +5,7 @@ import Product from '@/src/components/Product';
 import ProductType from '@/src/constants/product';
 import useAxiosAuth from '@api/auth';
 import { useRouter } from 'next/router';
+import snackbarUtils from '@/src/utils/snackbarUtils';
 
 const CreateOrder: React.FC = () => {
   const [form] = Form.useForm<ProductType[]>();
@@ -23,6 +24,7 @@ const CreateOrder: React.FC = () => {
           })
           .then((res) => {
             console.log(res);
+            snackbarUtils.success('order created successfully');
             router.push('/order/view');
           });
       } catch (error) {
