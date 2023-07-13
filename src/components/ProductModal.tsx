@@ -18,12 +18,10 @@ const ProductModal: React.FC<Props> = ({ modalProductDetailVisible, productId, s
 
   async function fetchData() {
     try {
-      dispatch(setLoading(true));
       const response = await axios.get(`https://dummyjson.com/products/${productId}`);
       const responseData = response.data;
       const product: Product = responseData;
-      await setProduct(product);
-      await dispatch(setLoading(false));            
+      await setProduct(product);          
     } catch (error) {
       console.error(error);
     }

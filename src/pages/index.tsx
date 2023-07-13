@@ -3,10 +3,6 @@ import type { NextPage } from 'next';
 import DefaultLayout from '../layouts/DefaultLayout';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
-import CreateRole from '../components/role/createroles/index';
-import { User, getUser } from '@api/user';
-import Approved from '../components/role/Approved';
-import Waiting from '../components/role/Waiting';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAuthState, setAuthState } from '@store/authSlice';
 import Head from 'next/head';
@@ -25,14 +21,6 @@ const Home: NextPage = () => {
       console.error(error);
     }
   };
-
-  const [user, setUser] = useState('');
-  const fetchData = () => {
-    // getUser().then((res) => {
-
-    // })
-  }
-
   const [menu, setMenu] = useState('Approved');
   const handleClick: React.MouseEventHandler<HTMLAnchorElement> = (event) => {
     event.preventDefault();
@@ -57,23 +45,10 @@ const Home: NextPage = () => {
     };
   }, [countdownAfterPressCancel]);
 
-  const AuthApp = () => {
+  const App = () => {
     return (
       <>
-        {openCreateRole && (
-          <div style={{ display: 'flex' }}>
-            <CreateRole setOpenCreateRole={setOpenCreateRole} />
-          </div>
-        )}
-        {!openCreateRole && (
           <>
-            {countdownAfterPressCancel > 0 && (
-              <>
-                <div className="box-alert-wrap">
-                  <div className="box-alert box-alert-success box-fixed-content"><strong>Success:</strong> The request role has been cancelled.</div>
-                </div>
-              </>
-            )}
             <div className="box-bar-level">
               <div className="box-bar-column">
                 <strong className="font-heading color-title">Patcharawat Sukrak</strong>
@@ -89,26 +64,8 @@ const Home: NextPage = () => {
               </div>
             </div>
           </>
-        )}
       </>
     )
-  }
-
-  const UnAuthApp = () => {
-    const myStyle={
-      backgroundImage:
-      "url('/images/background/bg.jpg')",
-      height:'100vh',
-      width: '100vh',
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat',
-  };
-  return (
-    <center>
-    <h1>หน้าแรก</h1>
-    <Image  width={1000} height={1000} alt='bg' src={'/images/background/bg.jpg'}></Image>
-    </center>
-  );
   }
 
   return (
@@ -116,7 +73,7 @@ const Home: NextPage = () => {
       <Head>
         <title>หน้าแรก</title>
       </Head>
-      {authState ? <AuthApp/> : <UnAuthApp/>}
+      <App />
     </>
   );
 };

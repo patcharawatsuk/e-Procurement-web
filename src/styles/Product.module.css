@@ -7,8 +7,8 @@
 .container div {
     width: auto;
     height: auto;
-    margin: 0.7em 0.7em;
-    background: #e6f3f4;
+    margin: 1em;
+    background: #d1e7fd;
 }
 
 .title {
@@ -20,7 +20,7 @@
 }
 
 .container div:hover {
-    background: rgb(232, 172, 61);
+    background: rgb(255, 248, 169);
     cursor: pointer;
 }
 

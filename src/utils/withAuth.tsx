@@ -4,11 +4,10 @@ import UnAuthApp from '../components/UnAuthApp';
 import { useRouter } from 'next/router';
 
 function withAuth(Component: any) {
-  const router = useRouter();
-  const currentUrl = router.asPath;
-
   function AuthenticatedComponent(props: any) {
     const isAuthenticated = useSelector(selectAuthState);
+    const router = useRouter();
+    const currentUrl = router.asPath;
     if (!isAuthenticated && currentUrl !== '/') {
       router.push('/');
       return <></>

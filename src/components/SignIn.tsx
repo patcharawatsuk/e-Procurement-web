@@ -2,18 +2,15 @@ import React from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAuthState, setAuthState } from '@store/authSlice';
+import { signInAsync } from '@store/authSlice';
 
-const onFinish = (values: any) => {
-  console.log('Success:', values);
-};
-
-const onFinishFailed = (errorInfo: any) => {
-  console.log('Failed:', errorInfo);
-};
+import { ThunkDispatch } from 'redux-thunk';
+import { AnyAction } from 'redux';
 
 const SignIn: React.FC = () => {
   const authState = useSelector(selectAuthState);
   const dispatch = useDispatch();
+  const thunkDispatch: ThunkDispatch<any, undefined, AnyAction> = useDispatch();
   
   const validateMessages = {
     required: '${label} is required!',
@@ -21,6 +18,18 @@ const SignIn: React.FC = () => {
       email: '${label} is not a valid email!',
     },
   };
+
+  const onFinish = (values: any) => {
+    const email: string = values.email;
+    const password: string = values.password;
+    thunkDispatch(signInAsync({email, password}));
+    console.log('Success:', values);
+  };
+  
+  const onFinishFailed = (errorInfo: any) => {
+    console.log('Failed:', errorInfo);
+  };
+
   return (
     <Form
       name="basic"
@@ -57,7 +66,6 @@ const SignIn: React.FC = () => {
         <Button className="btn-op-primary"
           type="primary"
           htmlType="submit"
-          onClick={() => dispatch(setAuthState(true))}
           >
           Submit
         </Button>

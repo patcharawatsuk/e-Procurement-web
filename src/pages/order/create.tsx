@@ -3,12 +3,38 @@ import Head from 'next/head';
 import { Form, FormInstance } from 'antd';
 import Product from '@/src/components/Product';
 import ProductType from '@/src/constants/product';
-import axios from 'axios';
+import useAxiosAuth from '@api/auth';
+import { useRouter } from 'next/router';
 
 const CreateOrder: React.FC = () => {
-
   const [form] = Form.useForm<ProductType[]>();
-  
+  const router = useRouter();
+
+  const usePostOrder = () => {
+    const axiosAuth = useAxiosAuth();
+
+    const postOrder = async (value: any) => {
+      try {
+        await axiosAuth
+          .post(`/api/order/create`, JSON.stringify(value), {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          })
+          .then((res) => {
+            console.log(res);
+            router.push('/order/view');
+          });
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    return postOrder;
+  };
+
+  const postOrder = usePostOrder();
+
   const onSave = (value: any) => {
     const order = value.products.map((e: ProductType) => {
       return {
@@ -18,20 +44,9 @@ const CreateOrder: React.FC = () => {
       }
     })
     console.log(order);
-    //postOrder(order);
+    postOrder(order);
   };
 
-  const postOrder = async (value: any) => {
-    try {
-      await axios
-        .post(`localhost:8089/order/create`, JSON.stringify(value))
-        .then((res) => {
-          console.log(res)
-        });
-    } catch (error) {
-      console.error(error);
-    }
-  }
 
   return (
     <>

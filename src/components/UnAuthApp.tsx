@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import { Image } from 'antd'
 import { createGlobalStyle } from 'styled-components';
 import SignIn from '@/src/components/SignIn';
-import { selectIsOpenSignIn } from '../store/signinSlice';
+import SignUp from '@/src/components/SignUp';
+import { selectIsSignInOpen, selectIsSignUpOpen } from '@/src/store/formOpenSlice';
 import { useSelector } from 'react-redux';
 
 const GlobalStyles = createGlobalStyle`
@@ -14,7 +15,9 @@ const GlobalStyles = createGlobalStyle`
   }`;
 
 const UnAuthApp = () => {
-  const isOpenSignIn = useSelector(selectIsOpenSignIn);
+  const isOpenSignIn = useSelector(selectIsSignInOpen);
+  const isOpenSignUp = useSelector(selectIsSignUpOpen);
+
   return (
     <>
       <GlobalStyles />
@@ -26,7 +29,8 @@ const UnAuthApp = () => {
         textAlign: 'center',
         fontWeight: 'bold'
       }}>Welcome</h3>
-      {isOpenSignIn && <SignIn /> }
+      {isOpenSignIn && <SignIn/> }
+      {isOpenSignUp && <SignUp/>}
     </>
   )
 }

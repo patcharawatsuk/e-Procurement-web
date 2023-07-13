@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import axios from 'axios';
-import { setLoading } from '@store/loadingSlice';
-import { useDispatch } from 'react-redux';
+import { selectIsLoading } from '@store/loadingSlice';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from '@/src/styles/Product.module.css';
 import { Image, Select, Space, Input, Checkbox, Button, Form, FormInstance, Badge } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
@@ -10,13 +9,14 @@ import Link from 'next/link';
 import ProductModal from '@/src/components/ProductModal';
 import Product from '@/src/constants/product';
 import CartModal from '@/src/components/CartModal';
+import axios from '@axios';
 
 interface Props {
     form: FormInstance;
 }
 
 const Product : React.FC<Props> = ({form}) => {
-  const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoading);
   const [data, setData] = useState<Product[]>([]);
   const [modalProductId, setModalProductId] = useState<number>(1);
   const [modalProductDetailVisible, setModalProductDetailVisible] = useState<boolean>(false);
@@ -24,7 +24,6 @@ const Product : React.FC<Props> = ({form}) => {
 
   async function fetchData() {
     try {
-      dispatch(setLoading(true));
       const response = await axios.get('https://dummyjson.com/products?limit=12');
       const responseData = response.data;
       const products: Product[] = responseData.products;
@@ -36,24 +35,21 @@ const Product : React.FC<Props> = ({form}) => {
         }
       })
       setData(setupProduct);
-      dispatch(setLoading(false));
     } catch (error) {
       console.error(error);
     }
   }
 
   async function fetchData2() {
-    debugger
-    const apiUrl = 'http://localhost:8080/api/order/';
-    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb251dEBnbWFpbC5jb20iLCJpYXQiOjE2ODkxMTA2MTgsImV4cCI6MTY4OTExNDIxOH0._PJFswcmwe9HJo8pDkjEK_ROVQHDXiJRfNDMINyu4MA';
+    const apiUrl = '/api/order/';
+    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb251dEBnbWFpbC5jb20iLCJpYXQiOjE2ODkxMjk5MDUsImV4cCI6MTY4OTEzMzUwNX0.wXgs0fX8pl9oFwoLkYanHKfPe5e8isYx4AjENjrI-3k';
     try {
-      await axios.post(`${apiUrl}`, {},{
+      await axios.post(`${apiUrl}` , {},{
         headers: {
-          'Authorization': 'Bearer ' + token,
+          'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
         }
       }).then(res => {
-        debugger
         console.log(res.data);
       }).catch(err => {
         throw new Error(err)
@@ -65,7 +61,7 @@ const Product : React.FC<Props> = ({form}) => {
 
   useEffect(() => {
     fetchData();
-    fetchData2();
+    //fetchData2();
   }, []);
 
   const addCart = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -135,10 +131,10 @@ const Product : React.FC<Props> = ({form}) => {
   }
 
     return (
-        <div>
+        <div style={{display: !isLoading ? 'block' : 'none'}}>
           <div className={styles.container} style={{ margin: '0.2em' }}>
             {data.map((e) => (
-              <div key={e.id} onClick={addCart} item-id={e.id}>
+              <div key={e.id} onClick={addCart} item-id={e.id} style={{borderRadius: '1em'}}>
                 <Badge count={e.qty} className={styles.productContainer}>
                 <h2 className={styles.title}>{e.title}</h2>
                 <h2 className={styles.title}>{(e.price * 35.14).toLocaleString(undefined, { maximumFractionDigits: 0 })}</h2>
