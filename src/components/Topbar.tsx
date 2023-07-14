@@ -2,14 +2,17 @@ import * as React from 'react';
 import Image from 'next/image';
 import type { MenuProps } from 'antd';
 import { Dropdown, Space } from 'antd';
-import { selectAuthState, setAuthState } from '@store/authSlice';
+import { selectAuthState, setAuthState, setUserDetail, selectUserDetail } from '@store/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import Link from 'next/link';
 import { selectIsSignInOpen, setSignInOpen, setSignUpOpen } from '@/src/store/formOpenSlice';
+import { useRouter } from 'next/router';
 
 function ResponsiveAppBar() {
   const authState = useSelector(selectAuthState);
   const dispatch = useDispatch();
+  const userDetail = useSelector(selectUserDetail);
+  const router = useRouter();
 
   const authItems: MenuProps['items'] = [
     {
@@ -22,11 +25,14 @@ function ResponsiveAppBar() {
     {
       label: (
         <li className="user-dd-display">
-          <div className="font-heading color-title">Patcharawat Sukrak</div>
-          <div className="color-sub">patcharawatsuk@gosoft.co.th</div>
+          <div className="font-heading color-title">{userDetail?.firstName} {userDetail?.lastName}</div>
+          <div className="color-sub">{userDetail?.email}</div>
         </li>
       ),
       key: '1',
+      onClick: () => {
+        router.push('/');
+      }
     },
     {
       type: 'divider',
@@ -91,7 +97,7 @@ function ResponsiveAppBar() {
             <div className="box-dropdown-title nav-format nav-profile color-sub">
               <span className="icon-user-set icon-profile"></span>
               <div className="profile-name">
-                {authState && <span>patcharawatsuk@gosoft.co.th</span>}
+                {authState && <span>{userDetail?.email}</span>}
                 <i className="icon-arrow-menu-active"></i>
               </div>
             </div>

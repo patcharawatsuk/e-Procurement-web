@@ -6,16 +6,20 @@ import ProductType from '@/src/constants/product';
 import useAxiosAuth from '@api/auth';
 import { useRouter } from 'next/router';
 import snackbarUtils from '@/src/utils/snackbarUtils';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUserDetail } from '@store/authSlice';
 
 const CreateOrder: React.FC = () => {
   const [form] = Form.useForm<ProductType[]>();
   const router = useRouter();
+  const userDetail = useSelector(selectUserDetail);
 
   const usePostOrder = () => {
     const axiosAuth = useAxiosAuth();
 
     const postOrder = async (value: any) => {
       try {
+        debugger
         await axiosAuth
           .post(`/api/order/create`, JSON.stringify(value), {
             headers: {
@@ -41,6 +45,7 @@ const CreateOrder: React.FC = () => {
     const order = value.products.map((e: ProductType) => {
       return {
         productId: e.id,
+        productName: e.title,
         qty: e.qty,
         price: Number((e.price * 35.14).toFixed(0))
       }

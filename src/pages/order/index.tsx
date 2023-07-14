@@ -57,7 +57,7 @@ export default function Order(): JSX.Element {
       <Head>
         <title>order</title>
       </Head>
-      <div style={{padding: '0.5em 0.5em 0.25em 0.7em'}}>
+      <div style={{padding: '0.5em 0.5em 0.25em 3em'}}>
         <MenuList />
       </div>
     </>

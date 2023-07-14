@@ -41,7 +41,6 @@ const ProductModal: React.FC<Props> = ({ modalProductDetailVisible, productId, s
   };
 
   return (
-    <>
     <Modal
         title={product?.title}
         centered
@@ -61,7 +60,6 @@ const ProductModal: React.FC<Props> = ({ modalProductDetailVisible, productId, s
             <li><b>Brand:</b> {product?.brand}</li>
           </ul>
       </Modal>
-    </>
   )
 }
 

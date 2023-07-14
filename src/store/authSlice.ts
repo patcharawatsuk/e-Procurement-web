@@ -8,13 +8,21 @@ import {
 } from '../data/user';
 
 export interface AuthState {
-  authState: boolean;
-  error: string;
+  authState: boolean,
+  error: string,
+  firstName: string,
+  lastName: string,
+  email: string,
+  role: string,
 }
 
 const initialState: AuthState = {
   authState: false,
   error: '',
+  firstName: '',
+  lastName: '',
+  email: '',
+  role: '',
 };
 
 export const signInAsync = createAsyncThunk(
@@ -48,6 +56,12 @@ export const authSlice = createSlice({
     setAuthState(state, action) {
       state.authState = action.payload;
     },
+    setUserDetail(state, action) {
+      state.firstName = action.payload.firstName;
+      state.lastName = action.payload.lastName;
+      state.email = action.payload.email;
+      state.role = action.payload.role;
+    }
   },
 
   extraReducers: (builder) => {
@@ -89,8 +103,10 @@ export const authSlice = createSlice({
   },
 });
 
-export const { setAuthState } = authSlice.actions;
+export const { setAuthState, setUserDetail } = authSlice.actions;
 
 export const selectAuthState = (state: AppState) => state.auth?.authState;
+
+export const selectUserDetail = (state: AppState) => state.auth;
 
 export default authSlice.reducer;

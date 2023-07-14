@@ -107,7 +107,7 @@ const SignUp: React.FC = () => {
         shouldUpdate={(prevValues, currentValues) => prevValues.role !== currentValues.role}
       >
         {({ getFieldValue }) =>
-          getFieldValue('role') == 'app' ? (
+          getFieldValue('role') == 'APPROVER' ? (
             <Form.Item name="spendinglimit" label="Spending Limit" rules={[{ required: true }]}>
               <Select
                 placeholder="Select a role"

@@ -43,7 +43,7 @@ export const setInterceptors = (store: any) => {
     function (error) {
       console.log(error);
       store.dispatch(setLoading(false));
-      //snackbarUtils.error(error.response.data.error);
+      snackbarUtils.error(error.response.data.error);
 
       // Any status codes that falls outside the range of 2xx cause this function to trigger
       // Do something with response error

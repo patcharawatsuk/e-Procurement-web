@@ -4,23 +4,49 @@ import DefaultLayout from '../layouts/DefaultLayout';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectAuthState, setAuthState } from '@store/authSlice';
+import { selectAuthState, setUserDetail, selectUserDetail } from '@store/authSlice';
 import Head from 'next/head';
 import Image from 'next/image';
+import useAxiosAuth from '@api/auth';
+
+interface User {
+  firstName: string,
+  lastName: string,
+  email: string,
+  role: string
+}
 
 const Home: NextPage = () => {
   const authState = useSelector(selectAuthState);
-  const [openCreateRole, setOpenCreateRole] = useState(false);
+  const userDetail = useSelector(selectUserDetail);
+  const dispatch = useDispatch();
 
-  const router = useRouter();
-  const goToCreateRole = () => {
+  const [openCreateRole, setOpenCreateRole] = useState(false);
+  const axiosAuth = useAxiosAuth();
+
+  async function fetchUserData() {
     try {
-      //router.push('/role/create');
-      setOpenCreateRole(true);
+        await axiosAuth
+        .get('/api/user/detail')
+        .then(res => {
+            dispatch(setUserDetail({
+              firstName: res.data.data.firstName,
+              lastName: res.data.data.lastName,
+              email: res.data.data.email,
+              role: res.data.data.role
+            }))
+        }).catch(err => {
+            throw new Error(err)
+        })
     } catch (error) {
-      console.error(error);
+        console.error(error);
     }
-  };
+}
+
+useEffect(() => {
+  fetchUserData();
+}, [])
+
   const [menu, setMenu] = useState('Approved');
   const handleClick: React.MouseEventHandler<HTMLAnchorElement> = (event) => {
     event.preventDefault();
@@ -51,15 +77,15 @@ const Home: NextPage = () => {
           <>
             <div className="box-bar-level">
               <div className="box-bar-column">
-                <strong className="font-heading color-title">Patcharawat Sukrak</strong>
+                <strong className="font-heading color-title">{userDetail?.firstName} {userDetail?.lastName}</strong>
               </div>
               <div className="box-bar-column">
                 <div className="mb-10">
-                  {' '}
+                  {}
                   <span className="color-sub">Level</span>
                 </div>
                 <p className="clear-p">
-                  <span>Creator</span>
+                  <span>{userDetail?.role}</span>
                 </p>
               </div>
             </div>

@@ -40,25 +40,6 @@ const Product : React.FC<Props> = ({form}) => {
     }
   }
 
-  async function fetchData2() {
-    const apiUrl = '/api/order/';
-    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkb251dEBnbWFpbC5jb20iLCJpYXQiOjE2ODkxMjk5MDUsImV4cCI6MTY4OTEzMzUwNX0.wXgs0fX8pl9oFwoLkYanHKfPe5e8isYx4AjENjrI-3k';
-    try {
-      await axios.post(`${apiUrl}` , {},{
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json'
-        }
-      }).then(res => {
-        console.log(res.data);
-      }).catch(err => {
-        throw new Error(err)
-      })
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
   useEffect(() => {
     fetchData();
     //fetchData2();
@@ -130,15 +111,17 @@ const Product : React.FC<Props> = ({form}) => {
     form.setFieldsValue({...form.getFieldsValue(), 'products': dataSubmit});
   }
 
+  const [loadPic, setLoadPic] = useState<boolean>(true);
+
     return (
-        <div style={{display: !isLoading ? 'block' : 'none'}}>
+        <div style={{display: !loadPic ? 'block' : 'none'}}>
           <div className={styles.container} style={{ margin: '0.2em' }}>
             {data.map((e) => (
               <div key={e.id} onClick={addCart} item-id={e.id} style={{borderRadius: '1em'}}>
                 <Badge count={e.qty} className={styles.productContainer}>
                 <h2 className={styles.title}>{e.title}</h2>
                 <h2 className={styles.title}>{(e.price * 35.14).toLocaleString(undefined, { maximumFractionDigits: 0 })}</h2>
-                <Image preview={false} src={e.thumbnail} alt={e.title} width={250} height={250} />
+                <Image onLoad={() => setLoadPic(false)} preview={false} src={e.thumbnail} alt={e.title} width={250} height={250} />
                 <div className={styles.buttonContainer}>
                   <Button item-id={e.id} style={{ marginRight: '10px'}} danger onClick={(e) => handleRemoveItem(e as React.MouseEvent<HTMLButtonElement, MouseEvent>)}>-</Button>
                   <Button item-id={e.id} style={{ marginRight: '10px', borderColor: '#1c5cbd', color: '#1c5cbd' }} onClick={(e) => handleViewDetail(e as React.MouseEvent<HTMLButtonElement, MouseEvent>)}>Detail</Button>

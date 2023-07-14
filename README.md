@@ -10,3 +10,8 @@ For setup step
     2.3. cmd 'nvm use 18' to using node v.18
 3. cmd 'npm install' to downloading dependency (you will get node_module)
 4. cmd 'npm run dev' to start project
+
+
+
+##demo database
+docker run --name postgresdocker -e POSTGRES_PASSWORD=password -p 5432:5432 -v pgdocker:/var/lib/postgresql/data -d postgres
