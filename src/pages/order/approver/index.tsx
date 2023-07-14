@@ -5,14 +5,15 @@ import Product from '@/src/constants/product';
 import useAxiosAuth from '@api/auth';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { Modal, Image, Select, Space, Input, Checkbox, Button, Form, FormInstance, Badge } from 'antd';
+import { Image, Select, Space, Input, Checkbox, Button, Form, FormInstance, Badge } from 'antd';
 import snackbarUtils from '@/src/utils/snackbarUtils';
 
 interface Order {
-    id: number;
-    requester: string;
-    comment: string;
-    cancel: number
+    order_id: number;
+    step: number;
+    approver: string;
+    current: number;
+    requester: string
 }
 
 const View = () => {
@@ -22,7 +23,7 @@ const View = () => {
     const [order, setOrder] = useState<Order[]>([]);
     async function fetchData() {
         try {
-            await axiosAuth.get('/api/order/')
+            await axiosAuth.get('/api/order/approval')
                 .then(res => {
                     debugger
                     setOrder(res.data.data)
@@ -39,12 +40,12 @@ const View = () => {
     }, [])
 
     const viewOrderDetail = (orderId: number) => {
-        router.push(`/order/view/${orderId}`)
+        router.push(`/order/approver/${orderId}`)
     }
 
-    async function handleCancelOrderBu(orderId: number) {
+    async function handleCancelOrder(orderId: number) {
         try {
-            await axiosAuth.put(`/api/order/cancel?id=${orderId}`, msgCancel)
+            await axiosAuth.put(`/api/order/cancel?id=${orderId}`, '')
                 .then(res => {
                     snackbarUtils.success('cancelled order');
                     fetchData();
@@ -55,32 +56,34 @@ const View = () => {
             console.error(error);
         }
     }
-    const [modalCancelMsg, setModalCancelMsg] = useState<boolean>(false);
-    const [currentOrder, setCurrentOrder] = useState<number>(0);
-    function handleCancelOrder(orderId: number) {
-        setModalCancelMsg(true);
-        setCurrentOrder(orderId);
+
+    async function handleApproveOrder(orderId: number) {
+        try {
+            await axiosAuth.put(`/api/order/approve?id=${orderId}`)
+                .then(res => {
+                    snackbarUtils.success('approved order');
+                    fetchData();
+                }).catch(err => {
+                    throw new Error(err)
+                })
+        } catch (error) {
+            console.error(error);
+        }
     }
-    const [msgCancel, setMsgCancel] = useState<string>('');
-    const handleCancel = () => {
-        setModalCancelMsg(false);
-      };
-    const handleOk = () => {
-        handleCancelOrderBu(currentOrder)
-    };
+
     return (
         <>
             <div className='cart'>
                 <div className='cart-body'>
                     <h4>Order</h4>
+                    <h4>Approve</h4>
                     <h4>Cancel</h4>
-                    <h4>Comment</h4>
                 </div>
                 {order?.map((e, index) => (
                     <div key={index} className='cart-body'>
-                        <a onClick={() => viewOrderDetail(e.id)}>id # {e.id}</a>
-                        {(e.cancel === 1 || e.cancel === -9 )? <h4>-</h4> : <a onClick={() => handleCancelOrderBu(e.id)}>X</a>} 
-                        <h4>{e.comment}</h4>
+                        <a onClick={() => viewOrderDetail(e.order_id)}>id # {e.order_id}</a>
+                        <a onClick={() => handleApproveOrder(e.order_id)}>/</a>
+                        <a onClick={() => handleCancelOrder(e.order_id)}>X</a>
                     </div>
                 ))}
             </div>
@@ -105,21 +108,9 @@ const View = () => {
                 </Link>
                 
             </div>
-            
-        <Modal
-        open={modalCancelMsg}
-        title="Title"
-        onOk={handleOk}
-        onCancel={handleCancel}
-        footer={[
-          <Button style={{ marginRight: '10px'}} danger key="submit">
-            Cancel
-          </Button>,
-        ]}
-      >
-        <Input value={msgCancel} onChange={(e) => setMsgCancel(e.target.value)}></Input>
-      </Modal>
-    </>
+
+
+        </>
     )
 }
 

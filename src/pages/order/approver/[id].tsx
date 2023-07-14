@@ -55,7 +55,7 @@ const OrderDetail = () => {
 
     const totalPrice = order.reduce((total, currOrder) => {
       const { price, qty } = currOrder;
-      const indexTotal = price * qty;
+      const indexTotal = price * qty * 35;
       return total + indexTotal;
     }, 0);
   
@@ -77,7 +77,7 @@ const OrderDetail = () => {
             <p>{e.qty}</p>
             <p>{e.price}</p>
             <p>{
-              e.qty ? Number((e.qty * (e.price)).toFixed(0)).toLocaleString(undefined, { maximumFractionDigits: 0 })
+              e.qty ? Number((e.qty * (e.price * 35)).toFixed(0)).toLocaleString(undefined, { maximumFractionDigits: 0 })
               : ''
             }
             </p>
@@ -105,7 +105,7 @@ const OrderDetail = () => {
                 }}
             >
                 <div style={{ width: '1em' }}></div>
-                <Link href="/order/view">
+                <Link href="/order/approver">
                     <Button className="btn-op-default mr-20" style={{ marginRight: '10px' }}>Back</Button>
                 </Link>
                 
